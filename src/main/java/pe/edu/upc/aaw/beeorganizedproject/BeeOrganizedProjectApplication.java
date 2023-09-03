@@ -8,7 +8,6 @@ public class BeeOrganizedProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BeeOrganizedProjectApplication.class, args);
-		System.out.println("Hola mundo");
 	}
 
 }
