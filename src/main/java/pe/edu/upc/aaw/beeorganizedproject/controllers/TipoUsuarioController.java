@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoUsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
-
 import java.util.List;
 import java.util.stream.Collectors;
-
 @RestController
 @RequestMapping("/tipousuario")
 public class TipoUsuarioController {
@@ -27,7 +25,4 @@ public class TipoUsuarioController {
             return m.map(x, TipoUsuarioDTO.class);
         }).collect(Collectors.toList());
     }
-=======
-public class TipoUsuarioController {
-
 }
