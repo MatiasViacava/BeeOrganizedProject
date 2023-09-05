@@ -21,4 +21,9 @@ public class UsuarioServiceImplement implements IUsuarioService {
     public List<Usuario> list() {
         return iU.findAll();
     }
+
+    @Override
+    public void delete(int IDUsuario) {
+        iU.deleteById(IDUsuario);
+    }
 }
