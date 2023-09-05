@@ -4,5 +4,6 @@ import java.util.List;
 public interface ITipoUsuarioService {
     public void insert(TipoUsuario tipoUsuario);
     public List<TipoUsuario> list();
+    public void delete(int IDTipoUsuario);
   
 }

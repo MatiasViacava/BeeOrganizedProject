@@ -3,7 +3,9 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoUsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
+import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Usuario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
 
@@ -29,4 +31,14 @@ public class UsuarioController {
         }).collect(Collectors.toList());
     }
 
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer id){
+        uR.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody UsuarioDTO dto){
+        ModelMapper m=new ModelMapper();
+        Usuario d=m.map(dto,Usuario.class);
+        uR.insert(d);
+    }
 }
