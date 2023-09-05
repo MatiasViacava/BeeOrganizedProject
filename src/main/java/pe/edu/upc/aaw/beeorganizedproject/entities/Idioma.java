@@ -11,6 +11,8 @@ public class Idioma {
     @Column(name = "nombreIdioma", nullable = false, length = 45)
     private String nombreIdioma;
 
+
+
     public Idioma(){}
 
     public int getIdIdioma() {
