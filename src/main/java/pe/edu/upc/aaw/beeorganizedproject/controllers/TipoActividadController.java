@@ -29,13 +29,10 @@ public class TipoActividadController {
             return m.map(x,TipoActividadDTO.class);
         }).collect(Collectors.toList());
     }
-    //HU03: ELIMINAR
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id")Integer id){
         taS.delete(id);
     }
-    //HU06: MODIFICAR - Usar PutMapping
-    // NOTA:No se genera una funcion para Serviceimplement
     @PutMapping
     public void modificar(@RequestBody TipoActividadDTO dto){
         ModelMapper m=new ModelMapper();
