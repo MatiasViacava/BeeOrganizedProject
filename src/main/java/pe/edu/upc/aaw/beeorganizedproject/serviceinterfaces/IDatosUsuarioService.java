@@ -1,11 +1,11 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Usuario;
+import pe.edu.upc.aaw.beeorganizedproject.entities.DatosUsuario;
 
 import java.util.List;
 
 public interface IUsuarioService {
-    public void insert(Usuario usuario);
-    public List<Usuario> list();
+    public void insert(DatosUsuario datosUsuario);
+    public List<DatosUsuario> list();
     public void delete(int IDUsuario);
 }
