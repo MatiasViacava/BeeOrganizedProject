@@ -3,31 +3,29 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoUsuarioDTO;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Usuario;
-import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.DatosUsuarioDTO;
+import pe.edu.upc.aaw.beeorganizedproject.entities.DatosUsuario;
+import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IDatosUsuarioService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
-public class UsuarioController {
+public class DatosUsuarioController {
     @Autowired
-    private IUsuarioService uR;
+    private IDatosUsuarioService uR;
     @PostMapping
-    public void registrar(@RequestBody UsuarioDTO dto){
+    public void registrar(@RequestBody DatosUsuarioDTO dto){
         ModelMapper m = new ModelMapper();
-        Usuario i = m.map(dto, Usuario.class);
+        DatosUsuario i = m.map(dto, DatosUsuario.class);
         uR.insert(i);
     }
     @GetMapping
-    public List<UsuarioDTO> listar(){
+    public List<DatosUsuarioDTO> listar(){
         return uR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
-            return m.map(x, UsuarioDTO.class);
+            return m.map(x, DatosUsuarioDTO.class);
         }).collect(Collectors.toList());
     }
 
@@ -36,9 +34,9 @@ public class UsuarioController {
         uR.delete(id);
     }
     @PutMapping
-    public void modificar(@RequestBody UsuarioDTO dto){
+    public void modificar(@RequestBody DatosUsuarioDTO dto){
         ModelMapper m=new ModelMapper();
-        Usuario d=m.map(dto,Usuario.class);
+        DatosUsuario d=m.map(dto, DatosUsuario.class);
         uR.insert(d);
     }
 }
