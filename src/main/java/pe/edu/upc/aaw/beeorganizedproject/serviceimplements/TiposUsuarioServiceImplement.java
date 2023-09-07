@@ -1,25 +1,24 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
-import pe.edu.upc.aaw.beeorganizedproject.repositories.ITipoUsuarioRepository;
+import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
+import pe.edu.upc.aaw.beeorganizedproject.repositories.ITiposUsuarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 
 import java.util.List;
 
 @Service
-public class TipoUsuarioServiceImplement implements ITipoUsuarioService {
+public class TiposUsuarioServiceImplement implements ITipoUsuarioService {
     @Autowired
-    private ITipoUsuarioRepository tR;
+    private ITiposUsuarioRepository tR;
 
     @Override
-    public void insert(TipoUsuario tipoUsuario) {
-        tR.save(tipoUsuario);
+    public void insert(TiposUsuario tiposUsuario) {
+        tR.save(tiposUsuario);
     }
 
     @Override
-    public List<TipoUsuario> list() {
+    public List<TiposUsuario> list() {
         return tR.findAll();
     }
 

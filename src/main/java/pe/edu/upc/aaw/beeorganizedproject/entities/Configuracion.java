@@ -15,7 +15,7 @@ public class Configuracion {
     private Idioma idioma;
     @OneToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+    private DatosUsuario datosUsuario;
     public Configuracion() {
     }
 
@@ -43,11 +43,11 @@ public class Configuracion {
         this.idioma = idioma;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public DatosUsuario getUsuario() {
+        return datosUsuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(DatosUsuario datosUsuario) {
+        this.datosUsuario = datosUsuario;
     }
 }

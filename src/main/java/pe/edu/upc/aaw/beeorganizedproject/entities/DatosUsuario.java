@@ -1,25 +1,38 @@
-package pe.edu.upc.aaw.beeorganizedproject.dtos;
+package pe.edu.upc.aaw.beeorganizedproject.entities;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
-
+import javax.persistence.*;
 import java.time.LocalDate;
 
-public class UsuarioDTO {
-    private int idUsuario;
+@Entity
+@Table(name = "DatosUsuario")
+public class DatosUsuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idDatosUsuario;
+    @Column(name = "Nombres", length = 50, nullable = false)
     private String Nombres;
+    @Column(name = "Apellidos", length = 50, nullable = false)
     private String Apellidos;
+    @Column(name = "FechaNacimiento",nullable = false)
     private LocalDate FechaNacimiento;
+    @Column(name = "Universidad", length = 50, nullable = false)
     private String Universidad;
+    @Column(name = "Email", length = 50, nullable = false)
     private String Email;
+    @Column(name = "Contraseña", length = 50, nullable = false)
     private String Contraseña;
-    private TipoUsuario tipoUsuario;
-
-    public int getIdUsuario() {
-        return idUsuario;
+    @ManyToOne
+    @JoinColumn(name = "idTipoUsuario")
+    private TiposUsuario tiposUsuario;
+    public DatosUsuario() {
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public int getIdDatosUsuario() {
+        return idDatosUsuario;
+    }
+
+    public void setIdDatosUsuario(int idDatosUsuario) {
+        this.idDatosUsuario = idDatosUsuario;
     }
 
     public String getNombres() {
@@ -70,11 +83,11 @@ public class UsuarioDTO {
         Contraseña = contraseña;
     }
 
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
+    public TiposUsuario getTipoUsuario() {
+        return tiposUsuario;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setTipoUsuario(TiposUsuario tiposUsuario) {
+        this.tiposUsuario = tiposUsuario;
     }
 }

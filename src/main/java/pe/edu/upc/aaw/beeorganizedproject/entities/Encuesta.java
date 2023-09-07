@@ -1,7 +1,6 @@
 package pe.edu.upc.aaw.beeorganizedproject.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "Encuesta")
@@ -16,15 +15,15 @@ public class Encuesta {
 
     @ManyToOne
     @JoinColumn(name = "idUsuario")
-        private Usuario Usuario_Id;
+        private DatosUsuario datosUsuario_Id;
     public Encuesta() {
     }
 
-    public Encuesta(int idEncuesta, int valoracionFinal, String comentario, Usuario usuario_Id) {
+    public Encuesta(int idEncuesta, int valoracionFinal, String comentario, DatosUsuario datosUsuario_Id) {
         this.idEncuesta = idEncuesta;
         this.valoracionFinal = valoracionFinal;
         Comentario = comentario;
-        Usuario_Id = usuario_Id;
+        this.datosUsuario_Id = datosUsuario_Id;
     }
 
     public int getIdEncuesta() {
@@ -51,11 +50,11 @@ public class Encuesta {
         Comentario = comentario;
     }
 
-    public Usuario getUsuario_Id() {
-        return Usuario_Id;
+    public DatosUsuario getUsuario_Id() {
+        return datosUsuario_Id;
     }
 
-    public void setUsuario_Id(Usuario usuario_Id) {
-        Usuario_Id = usuario_Id;
+    public void setUsuario_Id(DatosUsuario datosUsuario_Id) {
+        this.datosUsuario_Id = datosUsuario_Id;
     }
 }
