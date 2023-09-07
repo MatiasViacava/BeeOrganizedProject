@@ -1,13 +1,13 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Usuario;
+import pe.edu.upc.aaw.beeorganizedproject.entities.DatosUsuario;
 
 public class ConfiguracionDTO {
     private int idConfiguracion;
     private String ColorInterfaz;
     private Idioma idioma;
-    private Usuario usuario;
+    private DatosUsuario datosUsuario;
 
     public int getIdConfiguracion() {
         return idConfiguracion;
@@ -33,11 +33,11 @@ public class ConfiguracionDTO {
         this.idioma = idioma;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public DatosUsuario getUsuario() {
+        return datosUsuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(DatosUsuario datosUsuario) {
+        this.datosUsuario = datosUsuario;
     }
 }

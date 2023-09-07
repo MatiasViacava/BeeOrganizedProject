@@ -1,8 +1,8 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-public class TipoUsuarioDTO {
+public class TiposUsuarioDTO {
     private int idTipoUsuario;
-    private String tipoUsuario;
+    private String NombreTipoUsuario;
 
     public int getIdTipoUsuario() {
         return idTipoUsuario;
@@ -12,11 +12,11 @@ public class TipoUsuarioDTO {
         this.idTipoUsuario = idTipoUsuario;
     }
 
-    public String getTipoUsuario() {
-        return tipoUsuario;
+    public String getNombreTipoUsuario() {
+        return NombreTipoUsuario;
     }
 
-    public void setTipoUsuario(String tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setNombreTipoUsuario(String NombreTipoUsuario) {
+        this.NombreTipoUsuario = NombreTipoUsuario;
     }
 }

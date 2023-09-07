@@ -2,29 +2,27 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoUsuarioDTO;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoUsuario;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.TiposUsuarioDTO;
+import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/tipousuario")
-public class TipoUsuarioController {
+public class TiposUsuarioController {
     @Autowired
     private ITipoUsuarioService tR;
     @PostMapping
-    public void registrar(@RequestBody TipoUsuarioDTO dto){
+    public void registrar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m = new ModelMapper();
-        TipoUsuario d = m.map(dto, TipoUsuario.class);
+        TiposUsuario d = m.map(dto, TiposUsuario.class);
         tR.insert(d);
     }
     @GetMapping
-    public List<TipoUsuarioDTO> listar(){
+    public List<TiposUsuarioDTO> listar(){
         return tR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
-            return m.map(x, TipoUsuarioDTO.class);
+            return m.map(x, TiposUsuarioDTO.class);
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
@@ -32,9 +30,9 @@ public class TipoUsuarioController {
         tR.delete(id);
     }
     @PutMapping
-    public void modificar(@RequestBody TipoUsuarioDTO dto){
+    public void modificar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m=new ModelMapper();
-        TipoUsuario d=m.map(dto,TipoUsuario.class);
+        TiposUsuario d=m.map(dto, TiposUsuario.class);
         tR.insert(d);
     }
 }

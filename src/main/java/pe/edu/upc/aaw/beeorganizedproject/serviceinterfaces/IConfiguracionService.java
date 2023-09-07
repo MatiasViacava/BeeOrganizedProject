@@ -1,8 +1,6 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces;
 
 import pe.edu.upc.aaw.beeorganizedproject.entities.Configuracion;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Usuario;
 
 import java.util.List;
 
