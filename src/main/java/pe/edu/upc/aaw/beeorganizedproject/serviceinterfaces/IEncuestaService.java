@@ -8,4 +8,6 @@ public interface IEncuestaService {
     void insert(Encuesta encuesta);
 
     List<Encuesta> list();
+
+    public void delete(int idEncuesta);
 }
