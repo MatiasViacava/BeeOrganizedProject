@@ -8,4 +8,6 @@ public interface IRespuestaService {
     public void insert(Respuesta respuesta);
 
     public List<Respuesta> list();
+
+    public void delete(int idRespuesta);
 }
