@@ -16,4 +16,9 @@ public class RespuestaServiceImplement implements IRespuestaService {
     public void insert(Respuesta respuesta){rR.save(respuesta);}
     @Override
     public List<Respuesta> list(){return rR.findAll();}
+
+    @Override
+    public void delete(int idRespuesta) {
+        rR.deleteById(idRespuesta);
+    }
 }

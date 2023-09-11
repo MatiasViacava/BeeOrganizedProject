@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.EncuestaDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.IdiomaDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Encuesta;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IEncuestaService;
 
 import java.util.List;
@@ -29,5 +31,15 @@ public class EncuestaController {
             ModelMapper m=new ModelMapper();
             return m.map(x,EncuestaDTO.class);
         }).collect(Collectors.toList());
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer id){eS.delete(id);}
+
+    @PutMapping
+    public void modificar(@RequestBody EncuestaDTO dto){
+        ModelMapper m=new ModelMapper();
+        Encuesta e=m.map(dto,Encuesta.class);
+        eS.insert(e);
+
     }
 }
