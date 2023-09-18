@@ -10,7 +10,7 @@ import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 
 
 @Repository
-public interface IUsuariosRepository extends JpaRepository<Usuarios, Long> {
+public interface IUsuarioRepository extends JpaRepository<Usuarios, Long> {
 	public Usuarios findByUsername(String username);
 	
 	//BUSCAR POR NOMBRE
