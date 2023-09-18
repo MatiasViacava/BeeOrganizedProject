@@ -16,4 +16,9 @@ public class EncuestaServiceImplement implements IEncuestaService {
     public void insert(Encuesta encuesta) {eR.save(encuesta);}
     @Override
     public List<Encuesta> list() {return eR.findAll();}
+
+    @Override
+    public void delete(int idEncuesta) {
+        eR.deleteById(idEncuesta);
+    }
 }
