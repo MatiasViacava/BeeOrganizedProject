@@ -2,28 +2,28 @@ package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.beeorganizedproject.entities.DatosUsuario;
-import pe.edu.upc.aaw.beeorganizedproject.repositories.IDatosUsuarioRepository;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
+import pe.edu.upc.aaw.beeorganizedproject.repositories.IUsuarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
 
 import java.util.List;
 
 @Service
-public class DatosUsuarioServiceImplement implements IUsuarioService {
+public class UsuarioServiceImplement implements IUsuarioService {
     @Autowired
-    private IDatosUsuarioRepository iU;
+    private IUsuarioRepository iU;
     @Override
-    public void insert(DatosUsuario datosUsuario) {
+    public void insert(Usuarios datosUsuario) {
         iU.save(datosUsuario);
     }
 
     @Override
-    public List<DatosUsuario> list() {
+    public List<Usuarios> list() {
         return iU.findAll();
     }
 
     @Override
-    public void delete(int IDUsuario) {
+    public void delete(long IDUsuario) {
         iU.deleteById(IDUsuario);
     }
 }
