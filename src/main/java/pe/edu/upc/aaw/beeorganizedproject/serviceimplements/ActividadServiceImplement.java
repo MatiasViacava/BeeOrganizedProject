@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.IActividadRepository;
-import pe.edu.upc.aaw.beeorganizedproject.repositories.IHorarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -32,5 +32,10 @@ public class ActividadServiceImplement implements IActividadService {
     @Override
     public List<String[]> CantidadDeActividadesMax() {
         return aR.CantidadDeActividadesMax();
+    }
+
+    @Override
+    public int countActividadByFecha(LocalDate fechainicio, LocalDate fechafin){
+       return aR.countActividadByFecha(fechainicio, fechafin);
     }
 }
