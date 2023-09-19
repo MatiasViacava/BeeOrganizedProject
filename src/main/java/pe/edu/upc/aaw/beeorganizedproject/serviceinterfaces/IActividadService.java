@@ -9,4 +9,5 @@ public interface IActividadService {
     public void insert(Actividad actividad);
     public List<Actividad> List();
     public void delete(int idActividad);
+    public List<String[]>CantidadDeActividadesMax();
 }

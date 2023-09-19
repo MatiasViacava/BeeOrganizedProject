@@ -28,4 +28,9 @@ public class ActividadServiceImplement implements IActividadService {
     public void delete(int idActividad) {
         aR.deleteById(idActividad);
     }
+
+    @Override
+    public List<String[]> CantidadDeActividadesMax() {
+        return aR.CantidadDeActividadesMax();
+    }
 }
