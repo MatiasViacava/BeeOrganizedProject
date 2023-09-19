@@ -3,23 +3,58 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
 
 import java.time.LocalDate;
+import java.util.List;
 
-public class DatosUsuarioDTO {
-    private int idUsuario;
+public class UsuarioDTO {
+    private Long id;
+    private String username;
+    private String password;
+    private Boolean enabled;
+    private List<TiposUsuario> tipos_usuario;
     private String Nombres;
     private String Apellidos;
     private LocalDate FechaNacimiento;
     private String Universidad;
     private String Email;
-    private String Contraseña;
-    private TiposUsuario tiposUsuario;
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<TiposUsuario> getTipos_usuario() {
+        return tipos_usuario;
+    }
+
+    public void setTipos_usuario(List<TiposUsuario> tipos_usuario) {
+        this.tipos_usuario = tipos_usuario;
     }
 
     public String getNombres() {
@@ -60,21 +95,5 @@ public class DatosUsuarioDTO {
 
     public void setEmail(String email) {
         Email = email;
-    }
-
-    public String getContraseña() {
-        return Contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        Contraseña = contraseña;
-    }
-
-    public TiposUsuario getTipoUsuario() {
-        return tiposUsuario;
-    }
-
-    public void setTipoUsuario(TiposUsuario tiposUsuario) {
-        this.tiposUsuario = tiposUsuario;
     }
 }

@@ -12,16 +12,15 @@ public class Horario {
     @Column(name = "CierreCiclo", nullable = false)
     private LocalDate CierreCiclo;
     @OneToOne
-    @JoinColumn(name = "idUsuario")
-    private DatosUsuario datosUsuario;
-
+    @JoinColumn(name = "usuario_id")
+    private Usuarios Usuario;
     public Horario(){
 
     }
-    public Horario(int idHorario, LocalDate cierreCiclo, DatosUsuario datosUsuario) {
+    public Horario(int idHorario, LocalDate cierreCiclo, Usuarios usuario) {
         this.idHorario = idHorario;
         CierreCiclo = cierreCiclo;
-        this.datosUsuario = datosUsuario;
+        this.Usuario = usuario;
     }
 
     public int getIdHorario() {
@@ -40,11 +39,11 @@ public class Horario {
         CierreCiclo = cierreCiclo;
     }
 
-    public DatosUsuario getUsuario() {
-        return datosUsuario;
+    public Usuarios getUsuario() {
+        return Usuario;
     }
 
-    public void setUsuario(DatosUsuario datosUsuario) {
-        this.datosUsuario = datosUsuario;
+    public void setUsuario(Usuarios usuario) {
+        this.Usuario = usuario;
     }
 }
