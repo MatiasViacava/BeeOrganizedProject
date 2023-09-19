@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.beeorganizedproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 
 @SpringBootApplication
 public class BeeOrganizedProjectApplication {

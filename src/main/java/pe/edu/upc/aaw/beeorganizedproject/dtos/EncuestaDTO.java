@@ -1,13 +1,13 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.DatosUsuario;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 
 public class EncuestaDTO {
     private int idEncuesta;
     private  int valoracionFinal;
     private String Comentario;
-    private DatosUsuario datosUsuario_Id;
+    private Usuarios Usuario;
 
     public int getIdEncuesta() {
         return idEncuesta;
@@ -33,11 +33,11 @@ public class EncuestaDTO {
         Comentario = comentario;
     }
 
-    public DatosUsuario getUsuario_Id() {
-        return datosUsuario_Id;
+    public Usuarios getUsuario() {
+        return Usuario;
     }
 
-    public void setUsuario_Id(DatosUsuario datosUsuario_Id) {
-        this.datosUsuario_Id = datosUsuario_Id;
+    public void setUsuario(Usuarios usuario) {
+        this.Usuario = usuario;
     }
 }
