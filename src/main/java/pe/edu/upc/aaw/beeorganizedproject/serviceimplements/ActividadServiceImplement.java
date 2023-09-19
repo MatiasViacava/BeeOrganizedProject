@@ -28,6 +28,12 @@ public class ActividadServiceImplement implements IActividadService {
     public void delete(int idActividad) {
         aR.deleteById(idActividad);
     }
+
+    @Override
+    public List<String[]> CantidadDeActividadesMax() {
+        return aR.CantidadDeActividadesMax();
+    }
+
     @Override
     public int countActividadByFecha(LocalDate fechainicio, LocalDate fechafin){
        return aR.countActividadByFecha(fechainicio, fechafin);
