@@ -26,4 +26,10 @@ public class TipoRecursoServiceImplement implements ITipoRecursoService {
     public void delete(int Id) {
         itR.deleteById(Id);
     }
+
+    @Override
+    public List<String[]> quantityTypeAcademicResource() {
+        return itR.quantityTypeAcademicResource();
+    }
+
 }

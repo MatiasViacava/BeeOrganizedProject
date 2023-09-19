@@ -33,4 +33,9 @@ public class TipoActividadServiceImplement implements ITipoActividadService {
         return taR.quantityTypeActivitie();
     }
 
+    @Override
+    public List<String[]> quantityTypeActivitieExtracurricular() {
+        return taR.quantityTypeActivitieExtracurricular();
+    }
+
 }
