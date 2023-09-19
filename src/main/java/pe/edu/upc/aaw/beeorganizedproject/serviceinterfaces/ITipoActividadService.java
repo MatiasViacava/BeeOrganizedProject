@@ -10,4 +10,5 @@ public interface ITipoActividadService {
 
     public void delete(int IDTipoActividad);
 
+    public List<String[]> quantityTypeActivitie();
 }
