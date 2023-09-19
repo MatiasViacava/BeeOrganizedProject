@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.IActividadRepository;
-import pe.edu.upc.aaw.beeorganizedproject.repositories.IHorarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
 
 import java.util.List;
