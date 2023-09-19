@@ -13,4 +13,13 @@ public interface ITipoActividadRepository extends JpaRepository<TipoActividad,In
     @Query(value = "SELECT ta.nombre_tipo_actividad as Tipo_Actividad, count(*) as cantidad \n" +
             "from tipo_actividad ta group by ta.nombre_tipo_actividad", nativeQuery = true)
     public List<String[]> quantityTypeActivitie();
+
+    @Query(value = "select CONCAT(u.nombres,' ',u.apellidos) as NombreCompleto, \n" +
+            " count(*) from tipo_actividad ta \n" +
+            " join Actividad a on ta.idtipo_actividad=a.idtipoactividad\n" +
+            " join Horario h on a.id_horario=h.id_horario\n" +
+            " join Usuarios u on u.id=h.usuario_id\n" +
+            " where ta.nombre_tipo_actividad='Extracurricular' group by NombreCompleto", nativeQuery = true)
+    public List<String[]> quantityTypeActivitieExtracurricular();
+
 }
