@@ -5,10 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ActividadDTO;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryActividadMAX;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Horario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
 
 import java.time.LocalDate;
@@ -62,5 +60,9 @@ public class ActividadController {
             listaSTO.add(dto);
         }
         return listaSTO;
+    }
+    @GetMapping("/CantActividadesEntreIntervalos")
+    public int CantidadActivades(LocalDate fechainicio, LocalDate fechafin){
+        return  aS.countActividadByFecha(fechainicio,fechafin);
     }
 }
