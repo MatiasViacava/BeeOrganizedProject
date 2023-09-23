@@ -15,24 +15,30 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/TipoRecurso")
+@RequestMapping("/tiposrecursos")
 public class TipoRecursoController {
     @Autowired
     private ITipoRecursoService trS;
+
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TipoRecursoDTO dto){
         ModelMapper m= new ModelMapper();
         TipoRecurso r= m.map(dto,TipoRecurso.class);
         trS.insert(r);
     }
+
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TipoRecursoDTO> listar(){
         return trS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x, TipoRecursoDTO.class);
         }).collect(Collectors.toList());
     }
+
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         trS.delete(id);
     }
@@ -44,7 +50,7 @@ public class TipoRecursoController {
     }
 
     @GetMapping("/cantidad")
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryCantRecursosPorTipoDTO> cantidadIngredientesPorPostre() {
         List<String[]> lista = trS.quantityTypeAcademicResource();
         List<QueryCantRecursosPorTipoDTO> listaDTO = new ArrayList<>();
