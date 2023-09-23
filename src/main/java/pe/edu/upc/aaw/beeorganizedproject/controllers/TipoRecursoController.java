@@ -22,8 +22,7 @@ public class TipoRecursoController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
-
-    public void registrar(@RequestBody TipoActividadDTO dto){
+    public void registrar(@RequestBody TipoRecursoDTO dto){
         ModelMapper m= new ModelMapper();
         TipoRecurso r= m.map(dto,TipoRecurso.class);
         trS.insert(r);

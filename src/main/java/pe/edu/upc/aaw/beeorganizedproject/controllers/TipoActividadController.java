@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.CantTipoActividadDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryCantTipoactividadPorUsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoActividadService;
@@ -58,6 +59,20 @@ public class TipoActividadController {
             CantTipoActividadDTO dto=new CantTipoActividadDTO();
             dto.setTipo_Actividad(data[0]);
             dto.setCantidad(Integer.parseInt(data[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
+
+    @GetMapping("/cantidadTipoActividad")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<QueryCantTipoactividadPorUsuarioDTO> cantTypeActivitieExtracurricular(){
+        List<String[]> lista=taS.quantityTypeActivitieExtracurricular();
+        List<QueryCantTipoactividadPorUsuarioDTO> listaDTO=new ArrayList<>();
+        for (String[] data:lista){
+            QueryCantTipoactividadPorUsuarioDTO dto=new QueryCantTipoactividadPorUsuarioDTO();
+            dto.setNombreUsuario(data[0]);
+            dto.setCantTipoactividadPorUsuarioDTO(Integer.parseInt(data[1]));
             listaDTO.add(dto);
         }
         return listaDTO;
