@@ -22,19 +22,24 @@ public class ActividadController {
     @Autowired
     private IActividadService aS;
     @PostMapping
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody ActividadDTO dto){
         ModelMapper m=new ModelMapper();
         Actividad d=m.map(dto,Actividad.class);
         aS.insert(d);
     }
+
     @GetMapping
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<ActividadDTO> Listar(){
         return aS.List().stream().map(x->{
             ModelMapper m=new ModelMapper();
             return m.map(x,ActividadDTO.class);
         }).collect(Collectors.toList());
     }
+
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         aS.delete(id);
     }
@@ -43,9 +48,10 @@ public class ActividadController {
         ModelMapper m=new ModelMapper();
         Actividad d=m.map(dto,Actividad.class);
         aS.insert(d);
+
     }
     @GetMapping("/actividadesmaximas")
-    @PreAuthorize("hasAuthority('administrador')")
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryActividadMAX> totalScoreTransactionComplete(){
         List<String[]> lista= aS.CantidadDeActividadesMax();
         List<QueryActividadMAX> listaSTO = new ArrayList<>();

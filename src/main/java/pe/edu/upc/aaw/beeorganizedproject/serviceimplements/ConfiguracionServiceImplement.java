@@ -19,7 +19,7 @@ public class ConfiguracionServiceImplement implements IConfiguracionService {
     }
     @Override
     public List<Configuracion> list() {
-        return null;
+        return iC.findAll();
     }
     @Override
     public void delete(int idConfiguracion) {
