@@ -38,6 +38,20 @@ public class Usuarios implements Serializable {
 	private String Email;
 	//
 
+	public Usuarios(){}
+
+	public Usuarios(Long id, String username, String password, Boolean enabled, List<TiposUsuario> tipos_usuario, String nombres, String apellidos, LocalDate fechaNacimiento, String universidad, String email) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.enabled = enabled;
+		this.tipos_usuario = tipos_usuario;
+		Nombres = nombres;
+		Apellidos = apellidos;
+		FechaNacimiento = fechaNacimiento;
+		Universidad = universidad;
+		Email = email;
+	}
 
 	public Long getId() {
 		return id;

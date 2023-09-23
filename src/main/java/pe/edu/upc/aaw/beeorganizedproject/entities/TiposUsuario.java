@@ -17,6 +17,12 @@ public class TiposUsuario {
     public TiposUsuario() {
     }
 
+    public TiposUsuario(int idTipoUsuario, String nombreTipoUsuario, Usuarios usuarios) {
+        this.idTipoUsuario = idTipoUsuario;
+        NombreTipoUsuario = nombreTipoUsuario;
+        this.usuarios = usuarios;
+    }
+
     public int getIdTipoUsuario() {
         return idTipoUsuario;
     }
@@ -31,5 +37,13 @@ public class TiposUsuario {
 
     public void setNombreTipoUsuario(String NombreTipoUsuario) {
         this.NombreTipoUsuario = NombreTipoUsuario;
+    }
+
+    public Usuarios getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
     }
 }
