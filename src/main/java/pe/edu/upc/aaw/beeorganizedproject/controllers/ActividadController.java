@@ -62,6 +62,7 @@ public class ActividadController {
         return listaSTO;
     }
     @GetMapping("/CantActividadesEntreIntervalos")
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public int CantidadActivades(LocalDate fechainicio, LocalDate fechafin){
         return  aS.countActividadByFecha(fechainicio,fechafin);
     }

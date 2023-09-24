@@ -9,7 +9,6 @@ import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IIdiomaService;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @RestController

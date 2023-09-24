@@ -1,7 +1,6 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces;
 
 import pe.edu.upc.aaw.beeorganizedproject.entities.Pregunta;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Respuesta;
 
 import java.util.List;
 

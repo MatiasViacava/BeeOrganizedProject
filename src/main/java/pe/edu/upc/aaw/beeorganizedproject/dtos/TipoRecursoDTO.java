@@ -1,7 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import javax.persistence.Column;
-
 public class TipoRecursoDTO {
     private int ID;
     private String NombreTipo;

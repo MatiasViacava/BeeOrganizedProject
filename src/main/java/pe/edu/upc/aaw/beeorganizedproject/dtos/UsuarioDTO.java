@@ -1,16 +1,13 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class UsuarioDTO {
     private Long id;
     private String username;
     private String password;
     private Boolean enabled;
-    //private List<TiposUsuario> tipos_usuario;
     private String Nombres;
     private String Apellidos;
     private LocalDate FechaNacimiento;
@@ -48,16 +45,6 @@ public class UsuarioDTO {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-
-    /*public List<TiposUsuario> getTipos_usuario() {
-        return tipos_usuario;
-    }
-
-    public void setTipos_usuario(List<TiposUsuario> tipos_usuario) {
-        this.tipos_usuario = tipos_usuario;
-    }
-
-     */
 
     public String getNombres() {
         return Nombres;
