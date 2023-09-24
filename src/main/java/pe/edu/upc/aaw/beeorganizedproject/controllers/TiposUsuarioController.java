@@ -9,7 +9,7 @@ import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/tiposdeusuario")
+@RequestMapping("/tiposusuarios")
 public class TiposUsuarioController {
     @Autowired
     private ITipoUsuarioService tR;
