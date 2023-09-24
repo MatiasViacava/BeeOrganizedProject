@@ -23,7 +23,7 @@ public class TiposUsuarioController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('ADMINISTRADOR','PROGRAMADOR')")
+    @PreAuthorize("hasAnyAuthority('ADMINISTRADOR')")
     public List<TiposUsuarioDTO> listar(){
         return tR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
