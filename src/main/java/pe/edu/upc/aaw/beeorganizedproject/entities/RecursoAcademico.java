@@ -1,6 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.entities;
 
-import javax.lang.model.element.Name;
 import javax.persistence.*;
 import java.util.Date;
 

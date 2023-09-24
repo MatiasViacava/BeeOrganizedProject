@@ -28,7 +28,7 @@ public class TipoActividadController {
         taS.insert(d);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TipoActividadDTO> Listar(){
         return taS.List().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -37,13 +37,13 @@ public class TipoActividadController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         taS.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('PROGRAMADOR')")
     public void modificar(@RequestBody TipoActividadDTO dto){
         ModelMapper m=new ModelMapper();
         TipoActividad d=m.map(dto,TipoActividad.class);
@@ -51,7 +51,7 @@ public class TipoActividadController {
     }
 
     @GetMapping("/cantidades")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<CantTipoActividadDTO> cantTypeActivitie(){
         List<String[]> lista=taS.quantityTypeActivitie();
         List<CantTipoActividadDTO> listaDTO=new ArrayList<>();
@@ -64,8 +64,8 @@ public class TipoActividadController {
         return listaDTO;
     }
 
-    @GetMapping("/cantidadTipoActividad")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @GetMapping("/cantidadesporusuario")
+    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryCantTipoactividadPorUsuarioDTO> cantTypeActivitieExtracurricular(){
         List<String[]> lista=taS.quantityTypeActivitieExtracurricular();
         List<QueryCantTipoactividadPorUsuarioDTO> listaDTO=new ArrayList<>();

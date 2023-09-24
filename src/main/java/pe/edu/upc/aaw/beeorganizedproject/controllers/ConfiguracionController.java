@@ -4,7 +4,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.ActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ConfiguracionDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Configuracion;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IConfiguracionService;
