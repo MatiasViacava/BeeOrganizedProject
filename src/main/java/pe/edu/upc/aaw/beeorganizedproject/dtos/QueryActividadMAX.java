@@ -3,23 +3,23 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 import java.time.LocalDate;
 
 public class QueryActividadMAX {
-    private LocalDate QueryNameTest;
-    private int QueryMaxTest;
+    private LocalDate DateActivity;
+    private int maxActivity;
 
-    public LocalDate getQueryNameTest() {
-        return QueryNameTest;
+    public LocalDate getDateActivity() {
+        return DateActivity;
     }
 
-    public void setQueryNameTest(LocalDate queryNameTest) {
-        QueryNameTest = queryNameTest;
+    public void setDateActivity(LocalDate dateActivity) {
+        DateActivity = dateActivity;
     }
 
-    public int getQueryMaxTest() {
-        return QueryMaxTest;
+    public int getMaxActivity() {
+        return maxActivity;
     }
 
-    public void setQueryMaxTest(int queryMaxTest) {
-        QueryMaxTest = queryMaxTest;
+    public void setMaxActivity(int maxActivity) {
+        this.maxActivity = maxActivity;
     }
 }
 

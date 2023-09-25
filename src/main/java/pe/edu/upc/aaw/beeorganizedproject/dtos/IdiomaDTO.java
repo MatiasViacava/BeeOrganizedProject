@@ -1,6 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import javax.persistence.Column;
 
 public class IdiomaDTO {
     private int idIdioma;

@@ -3,7 +3,6 @@ package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Configuracion;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.IConfiguracionRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IConfiguracionService;
 

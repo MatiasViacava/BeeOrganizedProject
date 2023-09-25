@@ -15,7 +15,7 @@ public class TiposUsuarioController {
     private ITipoUsuarioService tR;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         TiposUsuario d = m.map(dto, TiposUsuario.class);
@@ -23,7 +23,7 @@ public class TiposUsuarioController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TiposUsuarioDTO> listar(){
         return tR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
@@ -32,13 +32,13 @@ public class TiposUsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         tR.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('PROGRAMADOR') or hasAuthority('PROGRAMADOR')")
+    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void modificar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m=new ModelMapper();
         TiposUsuario d=m.map(dto, TiposUsuario.class);

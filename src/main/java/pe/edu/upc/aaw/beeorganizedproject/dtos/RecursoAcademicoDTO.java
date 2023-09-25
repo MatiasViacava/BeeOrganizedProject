@@ -3,9 +3,6 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoRecurso;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.Date;
 
 public class RecursoAcademicoDTO {

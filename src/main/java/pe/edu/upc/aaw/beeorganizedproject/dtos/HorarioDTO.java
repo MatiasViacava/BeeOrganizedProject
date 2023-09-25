@@ -1,13 +1,12 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 
 import java.time.LocalDate;
 
 public class HorarioDTO {
     private int idHorario;
     private LocalDate CierreCiclo;
-    private Usuarios Usuario;
+    private UsuarioDTO Usuario;
 
     public int getIdHorario() {
         return idHorario;
@@ -25,11 +24,11 @@ public class HorarioDTO {
         CierreCiclo = cierreCiclo;
     }
 
-    public Usuarios getUsuario() {
+    public UsuarioDTO getUsuario() {
         return Usuario;
     }
 
-    public void setUsuario(Usuarios usuario) {
+    public void setUsuario(UsuarioDTO usuario) {
         this.Usuario = usuario;
     }
 }

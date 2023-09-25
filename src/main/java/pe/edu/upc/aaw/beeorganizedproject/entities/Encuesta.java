@@ -8,7 +8,7 @@ public class Encuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEncuesta;
-    @Column(name = "valoracionFinal",nullable = false,length = 45)
+    @Column(name = "valoracionFinal",nullable = false)
     private  int valoracionFinal;
     @Column(name = "Comentario",nullable = false,length = 120)
     private String Comentario;

@@ -1,7 +1,6 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces;
 
 import pe.edu.upc.aaw.beeorganizedproject.entities.Horario;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
 
 import java.util.List;
 
