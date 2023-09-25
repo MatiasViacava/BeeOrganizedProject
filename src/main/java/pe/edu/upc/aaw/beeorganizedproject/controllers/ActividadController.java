@@ -55,8 +55,8 @@ public class ActividadController {
         List<QueryActividadMAX> listaSTO = new ArrayList<>();
         for (String[] data:lista){
             QueryActividadMAX dto = new QueryActividadMAX();
-            dto.setQueryNameTest(LocalDate.parse(data[0]) );
-            dto.setQueryMaxTest(Integer.parseInt(data[1]));
+            dto.setDateActivity(LocalDate.parse(data[0]) );
+            dto.setMaxActivity(Integer.parseInt(data[1]));
             listaSTO.add(dto);
         }
         return listaSTO;
