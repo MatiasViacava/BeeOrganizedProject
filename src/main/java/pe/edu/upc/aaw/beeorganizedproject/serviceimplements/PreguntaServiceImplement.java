@@ -16,4 +16,10 @@ public class PreguntaServiceImplement implements IPreguntaService {
     public void insert(Pregunta pregunta){pR.save(pregunta);}
     @Override
     public List<Pregunta> list(){return pR.findAll();}
+
+    @Override
+    public void delete(int idPregunta) {
+        pR.deleteById(idPregunta);
+
+    }
 }

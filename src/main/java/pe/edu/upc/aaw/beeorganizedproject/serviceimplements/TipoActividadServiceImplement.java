@@ -28,4 +28,14 @@ public class TipoActividadServiceImplement implements ITipoActividadService {
         taR.deleteById(IDTipoActividad);
     }
 
+    @Override
+    public List<String[]> quantityTypeActivitie() {
+        return taR.quantityTypeActivitie();
+    }
+
+    @Override
+    public List<String[]> quantityTypeActivitieExtracurricular() {
+        return taR.quantityTypeActivitieExtracurricular();
+    }
+
 }

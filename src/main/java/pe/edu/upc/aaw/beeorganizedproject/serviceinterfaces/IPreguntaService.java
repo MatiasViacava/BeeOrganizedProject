@@ -10,4 +10,6 @@ public interface IPreguntaService {
     void insert(Pregunta pregunta);
 
     List<Pregunta> list();
+
+    public void delete(int idPregunta);
 }

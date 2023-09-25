@@ -14,7 +14,7 @@ public class Actividad {
     private String NombreActividad;
     @Column(name = "Descripcion",nullable = false,length = 150)
     private String Descripcion;
-    @Column(name = "typeIngredient",nullable = false,length = 80)
+    @Column(name = "Estado",nullable = false,length = 80)
     private String Estado;
     @Column(name = "Calificacion",nullable = false)
     private int Calificacion;
