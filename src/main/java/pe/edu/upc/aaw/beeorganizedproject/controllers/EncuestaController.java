@@ -5,9 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.EncuestaDTO;
-import pe.edu.upc.aaw.beeorganizedproject.dtos.IdiomaDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Encuesta;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IEncuestaService;
 
 import java.util.List;

@@ -10,8 +10,12 @@ import java.util.List;
 
 @Repository
 public interface IActividadRepository extends JpaRepository<Actividad, Integer> {
-    @Query(value = "select fecha, max(1) from\n" +
-            " (select a.fecha,count(*) from actividad a group by a.fecha) as ALIASTIP group by fecha", nativeQuery = true)
+    @Query(value = "SELECT fecha, MAX(cantidad_actividades) as max_actividades\n" +
+            " FROM (\n" +
+            "     SELECT fecha, COUNT(*) as cantidad_actividades\n" +
+            "     FROM actividad\n" +
+            "     GROUP BY fecha\n" +
+            " ) subquery group by fecha limit 1;", nativeQuery = true)
     public List<String[]>CantidadDeActividadesMax();
   
    @Query(value = "select count(*) from actividad where fecha between :fechainicio and :fechafin",nativeQuery = true)

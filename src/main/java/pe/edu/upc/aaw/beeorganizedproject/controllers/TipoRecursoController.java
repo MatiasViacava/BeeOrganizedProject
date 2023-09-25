@@ -51,7 +51,7 @@ public class TipoRecursoController {
 
     @GetMapping("/cantidad")
     @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
-    public List<QueryCantRecursosPorTipoDTO> cantidadIngredientesPorPostre() {
+    public List<QueryCantRecursosPorTipoDTO> CantidadRecursosAcademicosPorTipo() {
         List<String[]> lista = trS.quantityTypeAcademicResource();
         List<QueryCantRecursosPorTipoDTO> listaDTO = new ArrayList<>();
         for(String[] data:lista) {
