@@ -3,7 +3,7 @@ import pe.edu.upc.aaw.beeorganizedproject.entities.Pregunta;
 
 public class RespuestaDTO {
     private int idRespuesta;
-    private Pregunta Pregunta_Id;
+    private PreguntaDTO Pregunta_Id;
     private String Contenido;
 
     public int getIdRespuesta() {
@@ -14,11 +14,11 @@ public class RespuestaDTO {
         this.idRespuesta = idRespuesta;
     }
 
-    public Pregunta getPregunta_Id() {
+    public PreguntaDTO getPregunta_Id() {
         return Pregunta_Id;
     }
 
-    public void setPregunta_Id(Pregunta pregunta_Id) {
+    public void setPregunta_Id(PreguntaDTO pregunta_Id) {
         Pregunta_Id = pregunta_Id;
     }
 
