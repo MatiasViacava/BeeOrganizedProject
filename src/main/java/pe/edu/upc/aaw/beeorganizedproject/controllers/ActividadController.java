@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ActividadDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.CantActividadesIntervaloDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryActividadMAX;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
@@ -61,9 +62,9 @@ public class ActividadController {
         }
         return listaSTO;
     }
-    @GetMapping("/CantActividadesEntreIntervalos")
+    @PostMapping("/CantActividadesEntreIntervalos")
     @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
-    public int CantidadActivades(LocalDate fechainicio, LocalDate fechafin){
-        return  aS.countActividadByFecha(fechainicio,fechafin);
+    public int CantidadActivades(@RequestBody CantActividadesIntervaloDTO DTOCant){
+        return  aS.countActividadByFecha(DTOCant.getFechainicio(),DTOCant.getFechafin());
     }
 }
