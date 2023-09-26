@@ -4,10 +4,7 @@ public class TipoRecursoDTO {
     private int ID;
     private String NombreTipo;
 
-    public int getID() {
-        return ID;
-    }
-
+    public int getID() {return ID;}
     public void setID(int ID) {
         this.ID = ID;
     }

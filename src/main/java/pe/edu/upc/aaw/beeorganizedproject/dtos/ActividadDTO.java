@@ -1,9 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Horario;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
-
 import java.time.LocalDate;
 
 public class ActividadDTO {
@@ -13,9 +9,9 @@ public class ActividadDTO {
     private String Estado;
     private int Calificacion;
     private LocalDate Fecha;
-    private Horario horario;
-    private TipoActividad tipoActividad;
-    private Curso curso;
+    private HorarioDTO horario;
+    private TipoActividadDTO tipoActividad;
+    private CursoDTO curso;
 
     public int getIdActividad() {
         return idActividad;
@@ -65,27 +61,27 @@ public class ActividadDTO {
         Fecha = fecha;
     }
 
-    public Horario getHorario() {
+    public HorarioDTO getHorario() {
         return horario;
     }
 
-    public void setHorario(Horario horario) {
+    public void setHorario(HorarioDTO horario) {
         this.horario = horario;
     }
 
-    public TipoActividad getTipoActividad() {
+    public TipoActividadDTO getTipoActividad() {
         return tipoActividad;
     }
 
-    public void setTipoActividad(TipoActividad tipoActividad) {
+    public void setTipoActividad(TipoActividadDTO tipoActividad) {
         this.tipoActividad = tipoActividad;
     }
 
-    public Curso getCurso() {
+    public CursoDTO getCurso() {
         return curso;
     }
 
-    public void setCurso(Curso curso) {
+    public void setCurso(CursoDTO curso) {
         this.curso = curso;
     }
 }

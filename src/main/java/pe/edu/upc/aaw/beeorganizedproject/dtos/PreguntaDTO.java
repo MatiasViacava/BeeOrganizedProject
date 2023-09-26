@@ -1,10 +1,8 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Encuesta;
-
 public class PreguntaDTO {
     private int idPregunta;
-    private Encuesta Encuesta_id;
+    private EncuestaDTO Encuesta_id;
     private String Enunciado;
 
     public int getIdPregunta() {
@@ -15,11 +13,11 @@ public class PreguntaDTO {
         this.idPregunta = idPregunta;
     }
 
-    public Encuesta getEncuesta_id() {
+    public EncuestaDTO getEncuesta_id() {
         return Encuesta_id;
     }
 
-    public void setEncuesta_id(Encuesta encuesta_id) {
+    public void setEncuesta_id(EncuestaDTO encuesta_id) {
         Encuesta_id = encuesta_id;
     }
 
