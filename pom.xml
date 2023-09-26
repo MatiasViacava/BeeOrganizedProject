@@ -11,7 +11,7 @@
 	<groupId>pe.edu.upc.aaw</groupId>
 	<artifactId>BeeOrganizedProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>BeeOrganizedProject</name>
 	<description>BeeOrganizedProject</description>
 	<properties>
