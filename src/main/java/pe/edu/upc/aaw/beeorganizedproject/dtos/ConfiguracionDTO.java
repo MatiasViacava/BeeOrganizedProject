@@ -1,11 +1,9 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Idioma;
-
 public class ConfiguracionDTO {
     private int idConfiguracion;
     private String ColorInterfaz;
-    private Idioma idioma;
+    private IdiomaDTO idioma;
     private UsuarioDTO Usuario;
 
     public int getIdConfiguracion() {
@@ -24,11 +22,11 @@ public class ConfiguracionDTO {
         ColorInterfaz = colorInterfaz;
     }
 
-    public Idioma getIdioma() {
+    public IdiomaDTO getIdioma() {
         return idioma;
     }
 
-    public void setIdioma(Idioma idioma) {
+    public void setIdioma(IdiomaDTO idioma) {
         this.idioma = idioma;
     }
 

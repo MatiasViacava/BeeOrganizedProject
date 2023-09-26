@@ -1,5 +1,4 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
-import pe.edu.upc.aaw.beeorganizedproject.entities.Pregunta;
 
 public class RespuestaDTO {
     private int idRespuesta;

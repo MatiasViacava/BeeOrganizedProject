@@ -1,7 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Encuesta;
-
 public class PreguntaDTO {
     private int idPregunta;
     private EncuestaDTO Encuesta_id;
