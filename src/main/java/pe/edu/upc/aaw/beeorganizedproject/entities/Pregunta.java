@@ -14,7 +14,7 @@ public class Pregunta {
 
     @ManyToOne
     @JoinColumn(name = "idEncuesta")
-    private Encuesta Encuenta_id;
+    private Encuesta Encuesta_id;
     public Pregunta(){
 
     }
@@ -22,7 +22,7 @@ public class Pregunta {
     public Pregunta(int idPregunta, String enunciado, Encuesta encuenta_id) {
         this.idPregunta = idPregunta;
         Enunciado = enunciado;
-        Encuenta_id = encuenta_id;
+        Encuesta_id = encuenta_id;
     }
 
     public int getIdPregunta() {
@@ -42,11 +42,11 @@ public class Pregunta {
     }
 
     public Encuesta getEncuenta_id() {
-        return Encuenta_id;
+        return Encuesta_id;
     }
 
     public void setEncuenta_id(Encuesta encuenta_id) {
-        Encuenta_id = encuenta_id;
+        Encuesta_id = encuenta_id;
     }
 
 }
