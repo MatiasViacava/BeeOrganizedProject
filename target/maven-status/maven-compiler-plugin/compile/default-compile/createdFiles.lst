@@ -61,6 +61,7 @@ pe\edu\upc\aaw\beeorganizedproject\serviceinterfaces\IHorarioService.class
 pe\edu\upc\aaw\beeorganizedproject\repositories\IRespuestaRepository.class
 pe\edu\upc\aaw\beeorganizedproject\serviceinterfaces\IEncuestaService.class
 pe\edu\upc\aaw\beeorganizedproject\serviceinterfaces\ITipoActividadService.class
+pe\edu\upc\aaw\beeorganizedproject\dtos\CantActividadesIntervaloDTO.class
 pe\edu\upc\aaw\beeorganizedproject\dtos\CursoDTO.class
 pe\edu\upc\aaw\beeorganizedproject\controllers\UsuarioController.class
 pe\edu\upc\aaw\beeorganizedproject\security\JwtResponse.class

@@ -29,6 +29,7 @@ C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\dtos\TipoActividadDTO.java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\serviceinterfaces\IRecursoAcademicoService.java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\dtos\HorarioDTO.java
+C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\dtos\CantActividadesIntervaloDTO.java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\security\JwtAuthenticationEntryPoint.java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\serviceimplements\ConfiguracionServiceImplement.java
 C:\Users\matia\OneDrive\Documents\BeeOrganized\BeeOrganizedProject\src\main\java\pe\edu\upc\aaw\beeorganizedproject\controllers\EncuestaController.java

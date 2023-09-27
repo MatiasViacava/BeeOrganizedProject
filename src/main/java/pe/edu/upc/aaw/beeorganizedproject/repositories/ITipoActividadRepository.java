@@ -10,8 +10,9 @@ import java.util.List;
 @Repository
 public interface ITipoActividadRepository extends JpaRepository<TipoActividad,Integer> {
 
-    @Query(value = "SELECT ta.nombre_tipo_actividad as Tipo_Actividad, count(*) as cantidad \n" +
-            "from tipo_actividad ta group by ta.nombre_tipo_actividad", nativeQuery = true)
+    @Query(value = "SELECT ta.nombre_tipo_actividad as Tipo_Actividad, count(*) as cantidad from tipo_actividad ta\n" +
+            " join actividad on ta.idtipo_actividad=actividad.idtipoactividad\n" +
+            " group by ta.nombre_tipo_actividad", nativeQuery = true)
     public List<String[]> quantityTypeActivitie();
 
     @Query(value = "select CONCAT(u.nombres,' ',u.apellidos) as NombreCompleto, \n" +

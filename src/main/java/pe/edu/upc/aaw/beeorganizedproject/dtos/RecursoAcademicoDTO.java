@@ -1,8 +1,5 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
-import pe.edu.upc.aaw.beeorganizedproject.entities.TipoRecurso;
-
 import java.util.Date;
 
 public class RecursoAcademicoDTO {
@@ -18,9 +15,9 @@ public class RecursoAcademicoDTO {
 
     private Date FechaPublicacion;
 
-    private TipoRecurso tipoRecurso_ID;
+    private TipoRecursoDTO tipoRecurso_ID;
 
-    private Curso curso_IdCurso;
+    private CursoDTO curso_IdCurso;
 
     public int getID() {
         return ID;
@@ -70,19 +67,19 @@ public class RecursoAcademicoDTO {
         FechaPublicacion = fechaPublicacion;
     }
 
-    public TipoRecurso getTipoRecurso_ID() {
+    public TipoRecursoDTO getTipoRecurso_ID() {
         return tipoRecurso_ID;
     }
 
-    public void setTipoRecurso_ID(TipoRecurso tipoRecurso_ID) {
+    public void setTipoRecurso_ID(TipoRecursoDTO tipoRecurso_ID) {
         this.tipoRecurso_ID = tipoRecurso_ID;
     }
 
-    public Curso getCurso_IdCurso() {
+    public CursoDTO getCurso_IdCurso() {
         return curso_IdCurso;
     }
 
-    public void setCurso_IdCurso(Curso curso_IdCurso) {
+    public void setCurso_IdCurso(CursoDTO curso_IdCurso) {
         this.curso_IdCurso = curso_IdCurso;
     }
 }
