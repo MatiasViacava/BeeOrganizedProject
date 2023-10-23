@@ -2,7 +2,6 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.CantActividadesIntervaloDTO;
@@ -21,7 +20,6 @@ public class ActividadController {
     @Autowired
     private IActividadService aS;
     @PostMapping
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody ActividadDTO dto){
         ModelMapper m=new ModelMapper();
         Actividad d=m.map(dto,Actividad.class);
@@ -29,7 +27,6 @@ public class ActividadController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<ActividadDTO> Listar(){
         return aS.List().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -38,7 +35,6 @@ public class ActividadController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         aS.delete(id);
     }
@@ -50,7 +46,6 @@ public class ActividadController {
 
     }
     @GetMapping("/actividadesmaximas")
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryActividadMAX> totalScoreTransactionComplete(){
         List<String[]> lista= aS.CantidadDeActividadesMax();
         List<QueryActividadMAX> listaSTO = new ArrayList<>();
@@ -63,7 +58,6 @@ public class ActividadController {
         return listaSTO;
     }
     @PostMapping("/CantActividadesEntreIntervalos")
-    @PreAuthorize("hasAuthority('ESTUDIANTE') or hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public int CantidadActivades(@RequestBody CantActividadesIntervaloDTO DTOCant){
         return  aS.countActividadByFecha(DTOCant.getFechainicio(),DTOCant.getFechafin());
     }

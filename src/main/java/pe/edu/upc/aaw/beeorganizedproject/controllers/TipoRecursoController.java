@@ -2,7 +2,6 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryCantRecursosPorTipoDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
@@ -21,7 +20,6 @@ public class TipoRecursoController {
     private ITipoRecursoService trS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TipoRecursoDTO dto){
         ModelMapper m= new ModelMapper();
         TipoRecurso r= m.map(dto,TipoRecurso.class);
@@ -29,7 +27,6 @@ public class TipoRecursoController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TipoRecursoDTO> listar(){
         return trS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -38,7 +35,6 @@ public class TipoRecursoController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         trS.delete(id);
     }
@@ -50,7 +46,6 @@ public class TipoRecursoController {
     }
 
     @GetMapping("/cantidad")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryCantRecursosPorTipoDTO> CantidadRecursosAcademicosPorTipo() {
         List<String[]> lista = trS.quantityTypeAcademicResource();
         List<QueryCantRecursosPorTipoDTO> listaDTO = new ArrayList<>();
