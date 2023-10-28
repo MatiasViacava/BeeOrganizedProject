@@ -8,11 +8,11 @@ public class UsuarioDTO {
     private String username;
     private String password;
     private Boolean enabled;
-    private String Nombres;
-    private String Apellidos;
-    private LocalDate FechaNacimiento;
-    private String Universidad;
-    private String Email;
+    private String nombres;
+    private String apellidos;
+    private LocalDate fechaNacimiento;
+    private String universidad;
+    private String email;
 
     public Long getId() {
         return id;
@@ -47,42 +47,42 @@ public class UsuarioDTO {
     }
 
     public String getNombres() {
-        return Nombres;
+        return nombres;
     }
 
     public void setNombres(String nombres) {
-        Nombres = nombres;
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
-        return Apellidos;
+        return apellidos;
     }
 
     public void setApellidos(String apellidos) {
-        Apellidos = apellidos;
+        this.apellidos = apellidos;
     }
 
     public LocalDate getFechaNacimiento() {
-        return FechaNacimiento;
+        return fechaNacimiento;
     }
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        FechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getUniversidad() {
-        return Universidad;
+        return universidad;
     }
 
     public void setUniversidad(String universidad) {
-        Universidad = universidad;
+        this.universidad = universidad;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 }
