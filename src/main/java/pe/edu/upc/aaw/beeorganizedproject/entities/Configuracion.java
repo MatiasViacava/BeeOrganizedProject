@@ -8,14 +8,14 @@ public class Configuracion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idConfiguracion;
-    @Column(name = "ColorInterfaz", length = 50, nullable = false)
-    private String ColorInterfaz;
+    @Column(name = "colorInterfaz", length = 50, nullable = false)
+    private String colorInterfaz;
     @ManyToOne
     @JoinColumn(name = "idIdioma")
     private Idioma idioma;
     @OneToOne
     @JoinColumn(name = "usuario_id")
-    private Usuarios Usuario;
+    private Usuarios usuario;
     public Configuracion() {
     }
 
@@ -28,11 +28,11 @@ public class Configuracion {
     }
 
     public String getColorInterfaz() {
-        return ColorInterfaz;
+        return colorInterfaz;
     }
 
     public void setColorInterfaz(String colorInterfaz) {
-        ColorInterfaz = colorInterfaz;
+        this.colorInterfaz = colorInterfaz;
     }
 
     public Idioma getIdioma() {
@@ -44,10 +44,10 @@ public class Configuracion {
     }
 
     public Usuarios getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(Usuarios usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

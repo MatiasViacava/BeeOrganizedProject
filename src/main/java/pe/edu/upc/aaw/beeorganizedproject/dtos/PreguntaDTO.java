@@ -2,8 +2,8 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class PreguntaDTO {
     private int idPregunta;
-    private EncuestaDTO Encuesta_id;
-    private String Enunciado;
+    private EncuestaDTO encuesta_id;
+    private String enunciado;
 
     public int getIdPregunta() {
         return idPregunta;
@@ -14,18 +14,18 @@ public class PreguntaDTO {
     }
 
     public EncuestaDTO getEncuesta_id() {
-        return Encuesta_id;
+        return encuesta_id;
     }
 
     public void setEncuesta_id(EncuestaDTO encuesta_id) {
-        Encuesta_id = encuesta_id;
+        this.encuesta_id = encuesta_id;
     }
 
     public String getEnunciado() {
-        return Enunciado;
+        return enunciado;
     }
 
     public void setEnunciado(String enunciado) {
-        Enunciado = enunciado;
+        this.enunciado = enunciado;
     }
 }

@@ -2,8 +2,8 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class RespuestaDTO {
     private int idRespuesta;
-    private PreguntaDTO Pregunta_Id;
-    private String Contenido;
+    private PreguntaDTO pregunta_Id;
+    private String contenido;
 
     public int getIdRespuesta() {
         return idRespuesta;
@@ -14,18 +14,18 @@ public class RespuestaDTO {
     }
 
     public PreguntaDTO getPregunta_Id() {
-        return Pregunta_Id;
+        return pregunta_Id;
     }
 
     public void setPregunta_Id(PreguntaDTO pregunta_Id) {
-        Pregunta_Id = pregunta_Id;
+        this.pregunta_Id = pregunta_Id;
     }
 
     public String getContenido() {
-        return Contenido;
+        return contenido;
     }
 
     public void setContenido(String contenido) {
-        Contenido = contenido;
+        this.contenido = contenido;
     }
 }

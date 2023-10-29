@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class ActividadDTO {
     private int idActividad;
-    private String NombreActividad;
-    private String Descripcion;
-    private String Estado;
-    private int Calificacion;
-    private LocalDate Fecha;
+    private String nombreActividad;
+    private String descripcion;
+    private String estado;
+    private int calificacion;
+    private LocalDate fecha;
     private HorarioDTO horario;
     private TipoActividadDTO tipoActividad;
     private CursoDTO curso;
@@ -22,43 +22,43 @@ public class ActividadDTO {
     }
 
     public String getNombreActividad() {
-        return NombreActividad;
+        return nombreActividad;
     }
 
     public void setNombreActividad(String nombreActividad) {
-        NombreActividad = nombreActividad;
+        this.nombreActividad = nombreActividad;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 
     public int getCalificacion() {
-        return Calificacion;
+        return calificacion;
     }
 
     public void setCalificacion(int calificacion) {
-        Calificacion = calificacion;
+        this.calificacion = calificacion;
     }
 
     public LocalDate getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public HorarioDTO getHorario() {

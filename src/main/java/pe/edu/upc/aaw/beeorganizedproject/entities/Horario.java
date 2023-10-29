@@ -9,18 +9,19 @@ public class Horario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idHorario;
-    @Column(name = "CierreCiclo", nullable = false)
-    private LocalDate CierreCiclo;
+    @Column(name = "cierreCiclo", nullable = false)
+    private LocalDate cierreCiclo;
     @OneToOne
     @JoinColumn(name = "usuario_id")
-    private Usuarios Usuario;
+    private Usuarios usuario;
     public Horario(){
 
     }
+
     public Horario(int idHorario, LocalDate cierreCiclo, Usuarios usuario) {
         this.idHorario = idHorario;
-        CierreCiclo = cierreCiclo;
-        this.Usuario = usuario;
+        this.cierreCiclo = cierreCiclo;
+        this.usuario = usuario;
     }
 
     public int getIdHorario() {
@@ -32,18 +33,18 @@ public class Horario {
     }
 
     public LocalDate getCierreCiclo() {
-        return CierreCiclo;
+        return cierreCiclo;
     }
 
     public void setCierreCiclo(LocalDate cierreCiclo) {
-        CierreCiclo = cierreCiclo;
+        this.cierreCiclo = cierreCiclo;
     }
 
     public Usuarios getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(Usuarios usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

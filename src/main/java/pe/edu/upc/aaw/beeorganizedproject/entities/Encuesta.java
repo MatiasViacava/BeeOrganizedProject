@@ -10,20 +10,13 @@ public class Encuesta {
     private int idEncuesta;
     @Column(name = "valoracionFinal",nullable = false)
     private  int valoracionFinal;
-    @Column(name = "Comentario",nullable = false,length = 120)
-    private String Comentario;
+    @Column(name = "comentario",nullable = false,length = 120)
+    private String comentario;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuarios Usuario;
+    private Usuarios usuario;
     public Encuesta() {
-    }
-
-    public Encuesta(int idEncuesta, int valoracionFinal, String comentario, Usuarios Usuario) {
-        this.idEncuesta = idEncuesta;
-        this.valoracionFinal = valoracionFinal;
-        Comentario = comentario;
-        this.Usuario = Usuario;
     }
 
     public int getIdEncuesta() {
@@ -43,18 +36,18 @@ public class Encuesta {
     }
 
     public String getComentario() {
-        return Comentario;
+        return comentario;
     }
 
     public void setComentario(String comentario) {
-        Comentario = comentario;
+        this.comentario = comentario;
     }
 
     public Usuarios getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(Usuarios usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

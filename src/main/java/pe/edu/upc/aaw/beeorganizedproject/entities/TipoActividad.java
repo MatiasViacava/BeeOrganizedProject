@@ -7,32 +7,32 @@ import javax.persistence.*;
 public class TipoActividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IDTipoActividad;
+    private int iDTipoActividad;
 
-    @Column(name = "NombreTipoActividad",nullable = false,length = 60)
-    private String NombreTipoActividad;
+    @Column(name = "nombreTipoActividad",nullable = false,length = 60)
+    private String nombreTipoActividad;
 
     public TipoActividad(){
     }
 
-    public TipoActividad(int IDTipoActividad, String nombreTipoActividad) {
-        this.IDTipoActividad = IDTipoActividad;
-        NombreTipoActividad = nombreTipoActividad;
+    public TipoActividad(int iDTipoActividad, String nombreTipoActividad) {
+        this.iDTipoActividad = iDTipoActividad;
+        this.nombreTipoActividad = nombreTipoActividad;
     }
 
-    public int getIDTipoActividad() {
-        return IDTipoActividad;
+    public int getiDTipoActividad() {
+        return iDTipoActividad;
     }
 
-    public void setIDTipoActividad(int IDTipoActividad) {
-        this.IDTipoActividad = IDTipoActividad;
+    public void setiDTipoActividad(int iDTipoActividad) {
+        this.iDTipoActividad = iDTipoActividad;
     }
 
     public String getNombreTipoActividad() {
-        return NombreTipoActividad;
+        return nombreTipoActividad;
     }
 
     public void setNombreTipoActividad(String nombreTipoActividad) {
-        NombreTipoActividad = nombreTipoActividad;
+        this.nombreTipoActividad = nombreTipoActividad;
     }
 }

@@ -1,19 +1,22 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class TipoRecursoDTO {
-    private int ID;
-    private String NombreTipo;
+    private int iD;
+    private String nombreTipo;
 
-    public int getID() {return ID;}
-    public void setID(int ID) {
-        this.ID = ID;
+    public int getiD() {
+        return iD;
+    }
+
+    public void setiD(int iD) {
+        this.iD = iD;
     }
 
     public String getNombreTipo() {
-        return NombreTipo;
+        return nombreTipo;
     }
 
     public void setNombreTipo(String nombreTipo) {
-        NombreTipo = nombreTipo;
+        this.nombreTipo = nombreTipo;
     }
 }

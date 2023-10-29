@@ -2,9 +2,9 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class ConfiguracionDTO {
     private int idConfiguracion;
-    private String ColorInterfaz;
+    private String colorInterfaz;
     private IdiomaDTO idioma;
-    private UsuarioDTO Usuario;
+    private UsuarioDTO usuario;
 
     public int getIdConfiguracion() {
         return idConfiguracion;
@@ -15,11 +15,11 @@ public class ConfiguracionDTO {
     }
 
     public String getColorInterfaz() {
-        return ColorInterfaz;
+        return colorInterfaz;
     }
 
     public void setColorInterfaz(String colorInterfaz) {
-        ColorInterfaz = colorInterfaz;
+        this.colorInterfaz = colorInterfaz;
     }
 
     public IdiomaDTO getIdioma() {
@@ -31,10 +31,10 @@ public class ConfiguracionDTO {
     }
 
     public UsuarioDTO getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(UsuarioDTO usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

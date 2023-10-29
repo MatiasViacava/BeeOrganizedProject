@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class TiposUsuarioDTO {
     private int idTipoUsuario;
-    private String NombreTipoUsuario;
+    private String nombreTipoUsuario;
     private UsuarioDTO usuarios;
 
     public int getIdTipoUsuario() {
@@ -14,11 +14,11 @@ public class TiposUsuarioDTO {
     }
 
     public String getNombreTipoUsuario() {
-        return NombreTipoUsuario;
+        return nombreTipoUsuario;
     }
 
-    public void setNombreTipoUsuario(String NombreTipoUsuario) {
-        this.NombreTipoUsuario = NombreTipoUsuario;
+    public void setNombreTipoUsuario(String nombreTipoUsuario) {
+        this.nombreTipoUsuario = nombreTipoUsuario;
     }
 
     public UsuarioDTO getUsuarios() {

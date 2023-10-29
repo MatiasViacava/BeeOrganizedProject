@@ -10,16 +10,16 @@ public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idActividad;
-    @Column(name = "NombreActividad",nullable = false,length = 80)
-    private String NombreActividad;
-    @Column(name = "Descripcion",nullable = false,length = 150)
-    private String Descripcion;
-    @Column(name = "Estado",nullable = false,length = 80)
-    private String Estado;
-    @Column(name = "Calificacion",nullable = false)
-    private int Calificacion;
-    @Column(name = "Fecha",nullable = false)
-    private LocalDate Fecha;
+    @Column(name = "nombreActividad",nullable = false,length = 80)
+    private String nombreActividad;
+    @Column(name = "descripcion",nullable = false,length = 150)
+    private String descripcion;
+    @Column(name = "estado",nullable = false,length = 80)
+    private String estado;
+    @Column(name = "calificacion",nullable = false)
+    private int calificacion;
+    @Column(name = "fecha",nullable = false)
+    private LocalDate fecha;
 
     @ManyToOne
     @JoinColumn(name = "idHorario")
@@ -35,13 +35,14 @@ public class Actividad {
     public Actividad(){
 
     }
+
     public Actividad(int idActividad, String nombreActividad, String descripcion, String estado, int calificacion, LocalDate fecha, Horario horario, TipoActividad tipoActividad, Curso curso) {
         this.idActividad = idActividad;
-        NombreActividad = nombreActividad;
-        Descripcion = descripcion;
-        Estado = estado;
-        Calificacion = calificacion;
-        Fecha = fecha;
+        this.nombreActividad = nombreActividad;
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.calificacion = calificacion;
+        this.fecha = fecha;
         this.horario = horario;
         this.tipoActividad = tipoActividad;
         this.curso = curso;
@@ -56,43 +57,43 @@ public class Actividad {
     }
 
     public String getNombreActividad() {
-        return NombreActividad;
+        return nombreActividad;
     }
 
     public void setNombreActividad(String nombreActividad) {
-        NombreActividad = nombreActividad;
+        this.nombreActividad = nombreActividad;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 
     public int getCalificacion() {
-        return Calificacion;
+        return calificacion;
     }
 
     public void setCalificacion(int calificacion) {
-        Calificacion = calificacion;
+        this.calificacion = calificacion;
     }
 
     public LocalDate getFecha() {
-        return Fecha;
+        return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 
     public Horario getHorario() {

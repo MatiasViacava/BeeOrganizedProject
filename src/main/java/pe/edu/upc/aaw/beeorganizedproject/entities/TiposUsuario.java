@@ -8,7 +8,7 @@ public class TiposUsuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipoUsuario;
     @Column(name = "tipo_usuario",nullable = false, length = 45)
-    private String NombreTipoUsuario;
+    private String nombreTipoUsuario;
 
     @ManyToOne
     @JoinColumn(name="usuario_id", nullable=false)
@@ -19,7 +19,7 @@ public class TiposUsuario {
 
     public TiposUsuario(int idTipoUsuario, String nombreTipoUsuario, Usuarios usuarios) {
         this.idTipoUsuario = idTipoUsuario;
-        NombreTipoUsuario = nombreTipoUsuario;
+        this.nombreTipoUsuario = nombreTipoUsuario;
         this.usuarios = usuarios;
     }
 
@@ -32,11 +32,11 @@ public class TiposUsuario {
     }
 
     public String getNombreTipoUsuario() {
-        return NombreTipoUsuario;
+        return nombreTipoUsuario;
     }
 
-    public void setNombreTipoUsuario(String NombreTipoUsuario) {
-        this.NombreTipoUsuario = NombreTipoUsuario;
+    public void setNombreTipoUsuario(String nombreTipoUsuario) {
+        this.nombreTipoUsuario = nombreTipoUsuario;
     }
 
     public Usuarios getUsuarios() {

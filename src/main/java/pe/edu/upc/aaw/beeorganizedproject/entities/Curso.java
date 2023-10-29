@@ -10,24 +10,24 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
-    @Column(name = "NombreCurso",nullable = false,length = 45)
-    private  String NombreCurso;
-    @Column(name = "DescripcionCurso",nullable = false,length = 45)
-    private  String DescripcionCurso;
-    @Column(name = "FechaInicioCurso",nullable = false)
-    private LocalDate FechaInicioCurso;
-    @Column(name = "FechaFinCurso",nullable = false)
-    private LocalDate FechaFinCurso;
+    @Column(name = "nombreCurso",nullable = false,length = 45)
+    private  String nombreCurso;
+    @Column(name = "fescripcionCurso",nullable = false,length = 45)
+    private  String descripcionCurso;
+    @Column(name = "fechaInicioCurso",nullable = false)
+    private LocalDate fechaInicioCurso;
+    @Column(name = "fechaFinCurso",nullable = false)
+    private LocalDate fechaFinCurso;
 
     public Curso() {
     }
 
     public Curso(int idCurso, String nombreCurso, String descripcionCurso, LocalDate fechaInicioCurso, LocalDate fechaFinCurso) {
         this.idCurso = idCurso;
-        this.NombreCurso = nombreCurso;
-        this.DescripcionCurso = descripcionCurso;
-        this.FechaInicioCurso = fechaInicioCurso;
-        this.FechaFinCurso = fechaFinCurso;
+        this.nombreCurso = nombreCurso;
+        this.descripcionCurso = descripcionCurso;
+        this.fechaInicioCurso = fechaInicioCurso;
+        this.fechaFinCurso = fechaFinCurso;
     }
 
     public int getIdCurso() {
@@ -39,34 +39,34 @@ public class Curso {
     }
 
     public String getNombreCurso() {
-        return NombreCurso;
+        return nombreCurso;
     }
 
     public void setNombreCurso(String nombreCurso) {
-        NombreCurso = nombreCurso;
+        this.nombreCurso = nombreCurso;
     }
 
     public String getDescripcionCurso() {
-        return DescripcionCurso;
+        return descripcionCurso;
     }
 
     public void setDescripcionCurso(String descripcionCurso) {
-        DescripcionCurso = descripcionCurso;
+        this.descripcionCurso = descripcionCurso;
     }
 
     public LocalDate getFechaInicioCurso() {
-        return FechaInicioCurso;
+        return fechaInicioCurso;
     }
 
     public void setFechaInicioCurso(LocalDate fechaInicioCurso) {
-        FechaInicioCurso = fechaInicioCurso;
+        this.fechaInicioCurso = fechaInicioCurso;
     }
 
     public LocalDate getFechaFinCurso() {
-        return FechaFinCurso;
+        return fechaFinCurso;
     }
 
     public void setFechaFinCurso(LocalDate fechaFinCurso) {
-        FechaFinCurso = fechaFinCurso;
+        this.fechaFinCurso = fechaFinCurso;
     }
 }

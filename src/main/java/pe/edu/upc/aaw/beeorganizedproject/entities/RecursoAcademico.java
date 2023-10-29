@@ -8,85 +8,85 @@ import java.util.Date;
 public class RecursoAcademico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int iD;
 
-    @Column(name = "EnlaceRecurso",nullable = false,length = 255)
-    private String EnlaceRecurso;
-    @Column(name = "NombreRecurso",nullable = false,length = 255)
-    private String NombreRecurso;
-    @Column(name = "Autor",nullable = false,length = 255)
-    private String Autor;
-    @Column(name = "Descripcion",nullable = false,length = 255)
-    private String Descripcion;
-    @Column(name = "FechaPublicacion",nullable = false)
-    private Date FechaPublicacion;
+    @Column(name = "enlaceRecurso",nullable = false,length = 255)
+    private String enlaceRecurso;
+    @Column(name = "nombreRecurso",nullable = false,length = 255)
+    private String nombreRecurso;
+    @Column(name = "autor",nullable = false,length = 255)
+    private String autor;
+    @Column(name = "descripcion",nullable = false,length = 255)
+    private String descripcion;
+    @Column(name = "fechaPublicacion",nullable = false)
+    private Date fechaPublicacion;
     @ManyToOne
-    @JoinColumn(name="TipoRecurso_ID")
+    @JoinColumn(name="tipoRecurso_ID")
     private TipoRecurso tipoRecurso_ID;
     @ManyToOne
-    @JoinColumn(name = "Curso_IDCurso")
+    @JoinColumn(name = "curso_IDCurso")
     private Curso curso_IdCurso;
     public  RecursoAcademico(){
 
     }
 
-    public RecursoAcademico(int ID, String enlaceRecurso, String nombreRecurso, String autor, String descripcion, Date fechaPublicacion, TipoRecurso tipoRecurso_ID, Curso curso_IdCurso) {
-        this.ID = ID;
-        EnlaceRecurso = enlaceRecurso;
-        NombreRecurso = nombreRecurso;
-        Autor = autor;
-        Descripcion = descripcion;
-        FechaPublicacion = fechaPublicacion;
+    public RecursoAcademico(int iD, String enlaceRecurso, String nombreRecurso, String autor, String descripcion, Date fechaPublicacion, TipoRecurso tipoRecurso_ID, Curso curso_IdCurso) {
+        this.iD = iD;
+        this.enlaceRecurso = enlaceRecurso;
+        this.nombreRecurso = nombreRecurso;
+        this.autor = autor;
+        this.descripcion = descripcion;
+        this.fechaPublicacion = fechaPublicacion;
         this.tipoRecurso_ID = tipoRecurso_ID;
         this.curso_IdCurso = curso_IdCurso;
     }
 
-    public int getID() {
-        return ID;
+    public int getiD() {
+        return iD;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setiD(int iD) {
+        this.iD = iD;
     }
 
     public String getEnlaceRecurso() {
-        return EnlaceRecurso;
+        return enlaceRecurso;
     }
 
     public void setEnlaceRecurso(String enlaceRecurso) {
-        EnlaceRecurso = enlaceRecurso;
+        this.enlaceRecurso = enlaceRecurso;
     }
 
     public String getNombreRecurso() {
-        return NombreRecurso;
+        return nombreRecurso;
     }
 
     public void setNombreRecurso(String nombreRecurso) {
-        NombreRecurso = nombreRecurso;
+        this.nombreRecurso = nombreRecurso;
     }
 
     public String getAutor() {
-        return Autor;
+        return autor;
     }
 
     public void setAutor(String autor) {
-        Autor = autor;
+        this.autor = autor;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
     public Date getFechaPublicacion() {
-        return FechaPublicacion;
+        return fechaPublicacion;
     }
 
     public void setFechaPublicacion(Date fechaPublicacion) {
-        FechaPublicacion = fechaPublicacion;
+        this.fechaPublicacion = fechaPublicacion;
     }
 
     public TipoRecurso getTipoRecurso_ID() {

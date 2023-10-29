@@ -4,10 +4,11 @@ import java.time.LocalDate;
 
 public class CursoDTO {
     private int idCurso;
-    private  String NombreCurso;
-    private  String DescripcionCurso;
-    private LocalDate FechaInicioCurso;
-    private LocalDate FechaFinCurso;
+    private  String nombreCurso;
+    private  String descripcionCurso;
+    private LocalDate fechaInicioCurso;
+    private LocalDate fechaFinCurso;
+
     public int getIdCurso() {
         return idCurso;
     }
@@ -17,36 +18,34 @@ public class CursoDTO {
     }
 
     public String getNombreCurso() {
-        return NombreCurso;
+        return nombreCurso;
     }
 
     public void setNombreCurso(String nombreCurso) {
-        NombreCurso = nombreCurso;
+        this.nombreCurso = nombreCurso;
     }
 
     public String getDescripcionCurso() {
-        return DescripcionCurso;
+        return descripcionCurso;
     }
 
     public void setDescripcionCurso(String descripcionCurso) {
-        DescripcionCurso = descripcionCurso;
+        this.descripcionCurso = descripcionCurso;
     }
 
     public LocalDate getFechaInicioCurso() {
-        return FechaInicioCurso;
+        return fechaInicioCurso;
     }
 
     public void setFechaInicioCurso(LocalDate fechaInicioCurso) {
-        FechaInicioCurso = fechaInicioCurso;
+        this.fechaInicioCurso = fechaInicioCurso;
     }
 
     public LocalDate getFechaFinCurso() {
-        return FechaFinCurso;
+        return fechaFinCurso;
     }
 
     public void setFechaFinCurso(LocalDate fechaFinCurso) {
-        FechaFinCurso = fechaFinCurso;
+        this.fechaFinCurso = fechaFinCurso;
     }
-
-
 }

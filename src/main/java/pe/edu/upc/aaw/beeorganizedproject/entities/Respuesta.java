@@ -9,18 +9,18 @@ public class Respuesta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRespuesta;
     @Column(name = "Contenido", length = 50 ,nullable = false)
-    private String Contenido;
+    private String contenido;
 
     @ManyToOne
     @JoinColumn(name = "idPregunta")
-    private Pregunta Pregunta_Id;
+    private Pregunta pregunta_Id;
     public Respuesta(){
     }
 
     public Respuesta(int idRespuesta, String contenido, Pregunta pregunta_Id) {
         this.idRespuesta = idRespuesta;
-        Contenido = contenido;
-        Pregunta_Id = pregunta_Id;
+        this.contenido = contenido;
+        this.pregunta_Id = pregunta_Id;
     }
 
     public int getIdRespuesta() {
@@ -32,18 +32,18 @@ public class Respuesta {
     }
 
     public String getContenido() {
-        return Contenido;
+        return contenido;
     }
 
     public void setContenido(String contenido) {
-        Contenido = contenido;
+        this.contenido = contenido;
     }
 
     public Pregunta getPregunta_Id() {
-        return Pregunta_Id;
+        return pregunta_Id;
     }
 
     public void setPregunta_Id(Pregunta pregunta_Id) {
-        Pregunta_Id = pregunta_Id;
+        this.pregunta_Id = pregunta_Id;
     }
 }
