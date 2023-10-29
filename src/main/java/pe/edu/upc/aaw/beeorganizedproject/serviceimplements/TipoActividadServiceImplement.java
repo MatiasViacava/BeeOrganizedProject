@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.ITipoActividadRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoActividadService;
 
@@ -38,4 +39,8 @@ public class TipoActividadServiceImplement implements ITipoActividadService {
         return taR.quantityTypeActivitieExtracurricular();
     }
 
+    @Override
+    public TipoActividad listarId(int iDTipoActividad) {
+        return taR.findById(iDTipoActividad).orElse(new TipoActividad());
+    }
 }

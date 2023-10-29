@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.CantTipoActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryCantTipoactividadPorUsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoActividad;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoActividadService;
 
@@ -69,5 +70,12 @@ public class TipoActividadController {
             listaDTO.add(dto);
         }
         return listaDTO;
+    }
+
+    @GetMapping("/{id}")
+    public TipoActividadDTO listarId(@PathVariable("id") int iDTipoActividad) {
+        ModelMapper m=new ModelMapper();
+        TipoActividadDTO dto=m.map(taS.listarId(iDTipoActividad),TipoActividadDTO.class);
+        return dto;
     }
 }
