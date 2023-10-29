@@ -42,4 +42,11 @@ public class CursoController {
         Curso c=m.map(dto,Curso.class);
         dC.insert(c);
     }
+
+    @GetMapping("/{id}")
+    public CursoDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        CursoDTO dto=m.map(dC.listarId(id),CursoDTO.class);
+        return dto;
+    }
 }
