@@ -11,4 +11,5 @@ public interface IActividadService {
     public void delete(int idActividad);
     public List<String[]>CantidadDeActividadesMax();
     public int countActividadByFecha(LocalDate fechainicio, LocalDate fechafin);
+    public Actividad listarId(int idActividad);
 }

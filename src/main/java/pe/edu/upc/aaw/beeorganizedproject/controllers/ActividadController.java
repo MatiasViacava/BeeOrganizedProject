@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.CantActividadesIntervaloDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryActividadMAX;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
@@ -60,5 +61,11 @@ public class ActividadController {
     @PostMapping("/CantActividadesEntreIntervalos")
     public int CantidadActivades(@RequestBody CantActividadesIntervaloDTO DTOCant){
         return  aS.countActividadByFecha(DTOCant.getFechainicio(),DTOCant.getFechafin());
+    }
+    @GetMapping("/{id}")
+    public ActividadDTO listarId(@PathVariable("id") int idActividad) {
+        ModelMapper m=new ModelMapper();
+        ActividadDTO dto=m.map(aS.listarId(idActividad),ActividadDTO.class);
+        return dto;
     }
 }
