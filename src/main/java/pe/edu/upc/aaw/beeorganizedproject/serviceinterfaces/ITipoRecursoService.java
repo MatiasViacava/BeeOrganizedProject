@@ -1,6 +1,7 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces;
 
 
+import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoRecurso;
 
 import java.util.List;
@@ -10,5 +11,6 @@ public interface ITipoRecursoService {
     public List<TipoRecurso> list();
     public void delete(int Id);
     public List<String[]> quantityTypeAcademicResource();
+    public TipoRecurso listarId(int id);
 
 }

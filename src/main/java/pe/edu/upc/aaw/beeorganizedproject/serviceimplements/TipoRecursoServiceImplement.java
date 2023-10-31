@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TipoRecurso;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.ITipoRecursoRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoRecursoService;
@@ -30,6 +31,11 @@ public class TipoRecursoServiceImplement implements ITipoRecursoService {
     @Override
     public List<String[]> quantityTypeAcademicResource() {
         return itR.quantityTypeAcademicResource();
+    }
+
+    @Override
+    public TipoRecurso listarId(int id) {
+        return itR.findById(id).orElse(new TipoRecurso());
     }
 
 }
