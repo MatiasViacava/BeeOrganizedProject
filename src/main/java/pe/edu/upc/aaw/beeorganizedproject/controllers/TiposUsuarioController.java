@@ -3,6 +3,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TiposUsuarioDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 import java.util.List;
@@ -38,5 +39,11 @@ public class TiposUsuarioController {
         ModelMapper m=new ModelMapper();
         TiposUsuario d=m.map(dto, TiposUsuario.class);
         tR.insert(d);
+    }
+    @GetMapping("/{id}")
+    public TiposUsuarioDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        TiposUsuarioDTO dto=m.map(tR.listarId(id),TiposUsuarioDTO.class);
+        return dto;
     }
 }
