@@ -41,4 +41,11 @@ public class IdiomaController {
 
     }
 
+    @GetMapping("/{id}")
+    public IdiomaDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        IdiomaDTO dto=m.map(iS.listarId(id),IdiomaDTO.class);
+        return dto;
+    }
+
 }

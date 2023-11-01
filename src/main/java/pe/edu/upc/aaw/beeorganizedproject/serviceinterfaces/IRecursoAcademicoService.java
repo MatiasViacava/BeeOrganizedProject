@@ -8,4 +8,6 @@ public interface IRecursoAcademicoService {
     public void insert(RecursoAcademico recursoAcademico);
     public List<RecursoAcademico> List();
     public void delete(int idrecurso);
+    public RecursoAcademico listarId(int id);
+
 }

@@ -40,4 +40,11 @@ public class PreguntaController {
         Pregunta p= m.map(dto,Pregunta.class);
         pS.insert(p);
     }
+
+    @GetMapping("/{id}")
+    public PreguntaDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        PreguntaDTO dto=m.map(pS.listarId(id),PreguntaDTO.class);
+        return dto;
+    }
 }

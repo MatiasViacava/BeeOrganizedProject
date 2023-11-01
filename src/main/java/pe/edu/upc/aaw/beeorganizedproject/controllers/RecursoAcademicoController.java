@@ -42,4 +42,11 @@ public class RecursoAcademicoController {
         RecursoAcademico ra=m.map(dto,RecursoAcademico.class);
         iraS.insert(ra);
     }
+
+    @GetMapping("/{id}")
+    public RecursoAcademicoDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        RecursoAcademicoDTO dto=m.map(iraS.listarId(id),RecursoAcademicoDTO.class);
+        return dto;
+    }
 }

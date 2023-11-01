@@ -22,4 +22,9 @@ public class PreguntaServiceImplement implements IPreguntaService {
         pR.deleteById(idPregunta);
 
     }
+
+    @Override
+    public Pregunta listarId(int id) {
+        return pR.findById(id).orElse(new Pregunta());
+    }
 }

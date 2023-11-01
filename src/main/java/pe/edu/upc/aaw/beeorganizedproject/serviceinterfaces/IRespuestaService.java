@@ -10,4 +10,7 @@ public interface IRespuestaService {
     public List<Respuesta> list();
 
     public void delete(int idRespuesta);
+
+    public Respuesta listarId(int id);
+
 }

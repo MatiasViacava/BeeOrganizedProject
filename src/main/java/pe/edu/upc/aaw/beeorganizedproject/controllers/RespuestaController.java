@@ -39,4 +39,11 @@ public class RespuestaController {
         Respuesta r= m.map(dto,Respuesta.class);
         rS.insert(r);
     }
+
+    @GetMapping("/{id}")
+    public RespuestaDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        RespuestaDTO dto=m.map(rS.listarId(id),RespuestaDTO.class);
+        return dto;
+    }
 }

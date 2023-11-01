@@ -21,4 +21,8 @@ public class RespuestaServiceImplement implements IRespuestaService {
     public void delete(int idRespuesta) {
         rR.deleteById(idRespuesta);
     }
+    @Override
+    public Respuesta listarId(int id) {
+        return rR.findById(id).orElse(new Respuesta());
+    }
 }

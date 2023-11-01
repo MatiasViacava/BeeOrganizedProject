@@ -26,4 +26,8 @@ public class RecursoAcademicoServiceImplement implements IRecursoAcademicoServic
     public void delete(int idrecurso) {
         iraR.deleteById(idrecurso);
     }
+    @Override
+    public RecursoAcademico listarId(int id) {
+        return iraR.findById(id).orElse(new RecursoAcademico());
+    }
 }

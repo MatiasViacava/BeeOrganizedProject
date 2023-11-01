@@ -37,4 +37,11 @@ public class EncuestaController {
         Encuesta e=m.map(dto,Encuesta.class);
         eS.insert(e);
     }
+
+    @GetMapping("/{id}")
+    public EncuestaDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        EncuestaDTO dto=m.map(eS.listarId(id),EncuestaDTO.class);
+        return dto;
+    }
 }
