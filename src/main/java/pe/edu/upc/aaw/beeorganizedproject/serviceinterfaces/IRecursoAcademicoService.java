@@ -7,7 +7,7 @@ import java.util.List;
 public interface IRecursoAcademicoService {
     public void insert(RecursoAcademico recursoAcademico);
     public List<RecursoAcademico> List();
-    public void delete(int idrecurso);
+    public void delete(int iD);
     public RecursoAcademico listarId(int id);
 
 }

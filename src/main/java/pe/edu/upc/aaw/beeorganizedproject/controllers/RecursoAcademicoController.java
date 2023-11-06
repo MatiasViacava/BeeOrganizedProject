@@ -30,10 +30,9 @@ public class RecursoAcademicoController {
             return m.map(x, RecursoAcademicoDTO.class);
         }).collect(Collectors.toList());
     }
-
-    @DeleteMapping
-    public void eliminar(@PathVariable("ID")Integer id){
-        iraS.delete(id);
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id")Integer iD){
+        iraS.delete(iD);
     }
 
     @PutMapping
