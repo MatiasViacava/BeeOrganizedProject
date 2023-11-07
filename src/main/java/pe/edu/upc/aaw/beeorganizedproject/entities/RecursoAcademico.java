@@ -1,6 +1,7 @@
 package pe.edu.upc.aaw.beeorganizedproject.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -19,7 +20,7 @@ public class RecursoAcademico {
     @Column(name = "descripcion",nullable = false,length = 255)
     private String descripcion;
     @Column(name = "fechaPublicacion",nullable = false)
-    private Date fechaPublicacion;
+    private LocalDate fechaPublicacion;
     @ManyToOne
     @JoinColumn(name="tipoRecurso_ID")
     private TipoRecurso tipoRecurso_ID;
@@ -30,7 +31,7 @@ public class RecursoAcademico {
 
     }
 
-    public RecursoAcademico(int iD, String enlaceRecurso, String nombreRecurso, String autor, String descripcion, Date fechaPublicacion, TipoRecurso tipoRecurso_ID, Curso curso_IdCurso) {
+    public RecursoAcademico(int iD, String enlaceRecurso, String nombreRecurso, String autor, String descripcion, LocalDate fechaPublicacion, TipoRecurso tipoRecurso_ID, Curso curso_IdCurso) {
         this.iD = iD;
         this.enlaceRecurso = enlaceRecurso;
         this.nombreRecurso = nombreRecurso;
@@ -81,11 +82,11 @@ public class RecursoAcademico {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaPublicacion() {
+    public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(LocalDate fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 

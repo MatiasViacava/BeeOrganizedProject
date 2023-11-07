@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 
+import java.util.List;
+
 
 @Repository
 public interface IUsuarioRepository extends JpaRepository<Usuarios, Long> {
@@ -23,5 +25,8 @@ public interface IUsuarioRepository extends JpaRepository<Usuarios, Long> {
 	@Modifying
 	@Query(value = "insert into tipos_usuario (tipo_usuario, usuario_id) VALUES (:tipo_usuario, :usuario_id)", nativeQuery = true)
 	public void insRol(@Param("tipo_usuario") String authority, @Param("usuario_id") Long usuario_id);
+
+	//BUSCAR POR NOMBRE - CHISDE
+	List<Usuarios> findByNombres(String nombres);
 
 }

@@ -1,6 +1,6 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class RecursoAcademicoDTO {
     private int iD;
@@ -13,7 +13,7 @@ public class RecursoAcademicoDTO {
 
     private String descripcion;
 
-    private Date fechaPublicacion;
+    private LocalDate fechaPublicacion;
 
     private TipoRecursoDTO tipoRecurso_ID;
 
@@ -59,11 +59,11 @@ public class RecursoAcademicoDTO {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaPublicacion() {
+    public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(LocalDate fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 

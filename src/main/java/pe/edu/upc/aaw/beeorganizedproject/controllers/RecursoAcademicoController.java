@@ -7,7 +7,9 @@ import pe.edu.upc.aaw.beeorganizedproject.dtos.RecursoAcademicoDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.RecursoAcademico;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IRecursoAcademicoService;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -47,5 +49,15 @@ public class RecursoAcademicoController {
         ModelMapper m=new ModelMapper();
         RecursoAcademicoDTO dto=m.map(iraS.listarId(id),RecursoAcademicoDTO.class);
         return dto;
+    }
+
+    @PostMapping("/buscar")
+    public List<RecursoAcademicoDTO> buscar(@RequestBody Map<String, String> request) {
+        String fechaStr = request.get("fecha");
+        LocalDate fecha = LocalDate.parse(fechaStr);
+        return iraS.findByFechaPublicacion(fecha).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,RecursoAcademicoDTO.class);
+        }).collect(Collectors.toList());
     }
 }

@@ -10,4 +10,5 @@ public interface IUsuarioService {
     public void delete(long IDUsuario);
     public Usuarios listarId(Long id);
 
+    public List<Usuarios> findByNombres(String nombres);
 }

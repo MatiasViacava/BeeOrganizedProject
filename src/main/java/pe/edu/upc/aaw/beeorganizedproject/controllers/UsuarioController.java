@@ -49,4 +49,13 @@ public class UsuarioController {
         UsuarioDTO dto=m.map(uR.listarId(id),UsuarioDTO.class);
         return dto;
     }
+
+    //BUSCAR POR NOMBRE
+    @PostMapping("/buscarnombre")
+    public List<UsuarioDTO> buscarNombre(@RequestBody String name) {
+        return uR.findByNombres(name).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x,UsuarioDTO.class);
+        }).collect(Collectors.toList());
+    }
 }
