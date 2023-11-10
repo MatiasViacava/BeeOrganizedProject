@@ -10,4 +10,5 @@ public interface IConfiguracionService {
     public List<Configuracion> list();
     public void delete(int idConfiguracion);
     public Configuracion listId(int idConfiguracion);
+    public List<Configuracion> findByUsuarioId(long id);
 }

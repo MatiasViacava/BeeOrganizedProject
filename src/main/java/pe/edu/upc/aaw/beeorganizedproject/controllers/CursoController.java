@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.CursoDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Curso;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ICursoService;
 
@@ -48,5 +49,13 @@ public class CursoController {
         ModelMapper m=new ModelMapper();
         CursoDTO dto=m.map(dC.listarId(id),CursoDTO.class);
         return dto;
+    }
+
+    @GetMapping("/listar/{id2}")
+    public List<CursoDTO> listarporidusuario(@PathVariable("id2") long id){
+        return dC.buscarPorIdUsuario(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, CursoDTO.class);
+        }).collect(Collectors.toList());
     }
 }

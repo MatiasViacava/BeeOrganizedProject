@@ -6,6 +6,7 @@ import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.IUsuarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,4 +37,11 @@ public class UsuarioServiceImplement implements IUsuarioService {
     public List<Usuarios> findByNombres(String nombres) {
         return iU.findByNombres(nombres);
     }
+
+    @Override
+    public int ultimoUsuarioCreado() {return iU.ultimoUsuarioCreado();}
+
+    @Override
+    public void actualizarUsuario(long id, String p1, String p2, Boolean p3, String p4, String p5, LocalDate p6, String p7, String p8)
+    { iU.actualizarUsuario(id, p1, p2, p3, p4, p5, p6, p7, p8);}
 }

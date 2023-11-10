@@ -36,4 +36,6 @@ public class RecursoAcademicoServiceImplement implements IRecursoAcademicoServic
     public List<RecursoAcademico> findByFechaPublicacion(LocalDate fechaPublicacion) {
         return iraR.findByFechaPublicacion(fechaPublicacion);
     }
+    @Override
+    public List<RecursoAcademico> buscarPorIdUsuario(long id) {return iraR.buscarPorIdUsuario(id);}
 }

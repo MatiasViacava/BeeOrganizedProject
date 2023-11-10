@@ -68,4 +68,12 @@ public class ActividadController {
         ActividadDTO dto=m.map(aS.listarId(idActividad),ActividadDTO.class);
         return dto;
     }
+
+    @GetMapping("/listar/{id2}")
+    public List<ActividadDTO> listarporidusuario(@PathVariable("id2") long id){
+        return aS.findByHorarioUsuarioId(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, ActividadDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

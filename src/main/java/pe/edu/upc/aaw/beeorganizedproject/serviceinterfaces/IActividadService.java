@@ -12,4 +12,5 @@ public interface IActividadService {
     public List<String[]>CantidadDeActividadesMax();
     public int countActividadByFecha(LocalDate fechainicio, LocalDate fechafin);
     public Actividad listarId(int idActividad);
+    public List<Actividad> findByHorarioUsuarioId(long id);
 }

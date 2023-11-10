@@ -60,4 +60,11 @@ public class RecursoAcademicoController {
             return m.map(x,RecursoAcademicoDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/listar/{id2}")
+    public List<RecursoAcademicoDTO> listarporidusuario(@PathVariable("id2") long id){
+        return iraS.buscarPorIdUsuario(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, RecursoAcademicoDTO.class);
+        }).collect(Collectors.toList());
+    }
 }

@@ -44,4 +44,7 @@ public class ActividadServiceImplement implements IActividadService {
     public Actividad listarId(int idActividad) {
         return aR.findById(idActividad).orElse(new Actividad());
     }
+
+    @Override
+    public List<Actividad> findByHorarioUsuarioId(long id) {return aR.findByHorarioUsuarioId(id);}
 }

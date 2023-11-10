@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.ConfiguracionDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Configuracion;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IConfiguracionService;
 
@@ -47,5 +48,13 @@ public class ConfiguracionController {
         ModelMapper m = new ModelMapper();
         Configuracion d = m.map(dto, Configuracion.class);
         cS.insert(d);
+    }
+
+    @GetMapping("/listar/{id2}")
+    public List<ConfiguracionDTO> listarporidusuario(@PathVariable("id2") long id){
+        return cS.findByUsuarioId(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, ConfiguracionDTO.class);
+        }).collect(Collectors.toList());
     }
 }

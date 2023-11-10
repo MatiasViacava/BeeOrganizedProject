@@ -11,4 +11,5 @@ public interface IRecursoAcademicoService {
     public void delete(int iD);
     public RecursoAcademico listarId(int id);
     List<RecursoAcademico> findByFechaPublicacion(LocalDate fechaPublicacion);
+    List<RecursoAcademico> buscarPorIdUsuario(long id);
 }

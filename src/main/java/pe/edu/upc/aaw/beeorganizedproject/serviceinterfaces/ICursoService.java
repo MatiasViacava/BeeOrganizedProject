@@ -9,4 +9,5 @@ public interface ICursoService {
     public List<Curso> list();
     public void delete(int idCurso);
     public Curso listarId(int id);
+    public List<Curso> buscarPorIdUsuario(long id);
 }

@@ -8,6 +8,7 @@ import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,4 +59,20 @@ public class UsuarioController {
             return m.map(x,UsuarioDTO.class);
         }).collect(Collectors.toList());
     }
+
+    @GetMapping("/ultimousuariocreado")
+    public int ultimoUsuarioCreado()
+    {
+        return uR.ultimoUsuarioCreado();
+    }
+
+    @GetMapping("/actualizar/{id2}/{p1}/{p2}/{p3}/{p4}/{p5}/{p6}/{p7}/{p8}")
+    public void actualizardatos(@PathVariable("id2") Long id2, @PathVariable("p1") String p1,
+    @PathVariable("p2") String p2, @PathVariable("p3") String p3, @PathVariable("p4") String p4,
+    @PathVariable("p5") String p5, @PathVariable("p6") String p6, @PathVariable("p7") String p7,
+    @PathVariable("p8") String p8)
+    {
+        uR.actualizarUsuario(id2,p1,p2,Boolean.parseBoolean(p3),p4,p5,LocalDate.parse(p6),p7,p8);
+    }
+
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Horario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IHorarioService;
 
@@ -49,5 +50,13 @@ public class HorarioController {
         ModelMapper m=new ModelMapper();
         HorarioDTO dto=m.map(hS.listarId(idHorario),HorarioDTO.class);
         return dto;
+    }
+
+    @GetMapping("/listar/{id2}")
+    public List<HorarioDTO> listarporid(@PathVariable("id2") long id){
+        return hS.findByUsuarioId(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, HorarioDTO.class);
+        }).collect(Collectors.toList());
     }
 }

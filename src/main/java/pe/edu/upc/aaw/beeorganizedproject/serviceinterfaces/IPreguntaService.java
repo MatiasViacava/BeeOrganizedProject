@@ -13,4 +13,6 @@ public interface IPreguntaService {
 
     public void delete(int idPregunta);
     public Pregunta listarId(int id);
+
+    List<Pregunta> buscarPorIdUsuario(long id);
 }

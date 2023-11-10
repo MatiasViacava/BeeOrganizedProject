@@ -31,4 +31,7 @@ public class CursoServiceImplement implements ICursoService {
     public Curso listarId(int id) {
         return dC.findById(id).orElse(new Curso());
     }
+
+    @Override
+    public List<Curso> buscarPorIdUsuario(long id) {return dC.buscarPorIdUsuario(id);}
 }
