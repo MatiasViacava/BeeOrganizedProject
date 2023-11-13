@@ -25,4 +25,6 @@ public class RespuestaServiceImplement implements IRespuestaService {
     public Respuesta listarId(int id) {
         return rR.findById(id).orElse(new Respuesta());
     }
+    @Override
+    public List<Respuesta> buscarPorIdUsuario(long id) {return rR.buscarPorIdUsuario(id);}
 }

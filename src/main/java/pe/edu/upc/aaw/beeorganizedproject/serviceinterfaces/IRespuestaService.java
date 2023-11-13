@@ -12,5 +12,6 @@ public interface IRespuestaService {
     public void delete(int idRespuesta);
 
     public Respuesta listarId(int id);
+    List<Respuesta> buscarPorIdUsuario(long id);
 
 }
