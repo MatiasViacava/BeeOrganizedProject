@@ -5,8 +5,8 @@ import java.time.LocalDate;
 
 public class HorarioDTO {
     private int idHorario;
-    private LocalDate CierreCiclo;
-    private UsuarioDTO Usuario;
+    private LocalDate cierreCiclo;
+    private UsuarioDTO usuario;
 
     public int getIdHorario() {
         return idHorario;
@@ -17,18 +17,18 @@ public class HorarioDTO {
     }
 
     public LocalDate getCierreCiclo() {
-        return CierreCiclo;
+        return cierreCiclo;
     }
 
     public void setCierreCiclo(LocalDate cierreCiclo) {
-        CierreCiclo = cierreCiclo;
+        this.cierreCiclo = cierreCiclo;
     }
 
     public UsuarioDTO getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(UsuarioDTO usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

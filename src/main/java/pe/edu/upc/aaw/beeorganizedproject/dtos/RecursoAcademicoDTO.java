@@ -1,70 +1,70 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class RecursoAcademicoDTO {
-    private int ID;
+    private int iD;
 
-    private String EnlaceRecurso;
+    private String enlaceRecurso;
 
-    private String NombreRecurso;
+    private String nombreRecurso;
 
-    private String Autor;
+    private String autor;
 
-    private String Descripcion;
+    private String descripcion;
 
-    private Date FechaPublicacion;
+    private LocalDate fechaPublicacion;
 
     private TipoRecursoDTO tipoRecurso_ID;
 
     private CursoDTO curso_IdCurso;
 
-    public int getID() {
-        return ID;
+    public int getiD() {
+        return iD;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setiD(int iD) {
+        this.iD = iD;
     }
 
     public String getEnlaceRecurso() {
-        return EnlaceRecurso;
+        return enlaceRecurso;
     }
 
     public void setEnlaceRecurso(String enlaceRecurso) {
-        EnlaceRecurso = enlaceRecurso;
+        this.enlaceRecurso = enlaceRecurso;
     }
 
     public String getNombreRecurso() {
-        return NombreRecurso;
+        return nombreRecurso;
     }
 
     public void setNombreRecurso(String nombreRecurso) {
-        NombreRecurso = nombreRecurso;
+        this.nombreRecurso = nombreRecurso;
     }
 
     public String getAutor() {
-        return Autor;
+        return autor;
     }
 
     public void setAutor(String autor) {
-        Autor = autor;
+        this.autor = autor;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
-    public Date getFechaPublicacion() {
-        return FechaPublicacion;
+    public LocalDate getFechaPublicacion() {
+        return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
-        FechaPublicacion = fechaPublicacion;
+    public void setFechaPublicacion(LocalDate fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
     }
 
     public TipoRecursoDTO getTipoRecurso_ID() {

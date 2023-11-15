@@ -7,32 +7,32 @@ import javax.persistence.*;
 public class TipoRecurso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int iD;
 
-    @Column(name = "NombreTipo",nullable = false,length = 60)
-    private String NombreTipo;
+    @Column(name = "nombreTipo",nullable = false,length = 60)
+    private String nombreTipo;
     public TipoRecurso(){
 
     }
 
-    public TipoRecurso(int ID, String nombreTipo) {
-        this.ID = ID;
-        NombreTipo = nombreTipo;
+    public TipoRecurso(int iD, String nombreTipo) {
+        this.iD = iD;
+        this.nombreTipo = nombreTipo;
     }
 
-    public int getID() {
-        return ID;
+    public int getiD() {
+        return iD;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setiD(int iD) {
+        this.iD = iD;
     }
 
     public String getNombreTipo() {
-        return NombreTipo;
+        return nombreTipo;
     }
 
     public void setNombreTipo(String nombreTipo) {
-        NombreTipo = nombreTipo;
+        this.nombreTipo = nombreTipo;
     }
 }

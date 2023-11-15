@@ -26,16 +26,16 @@ public class Usuarios implements Serializable {
 	//
 
 	//Datos generales
-	@Column(name = "Nombres", length = 50, nullable = false)
-	private String Nombres;
-	@Column(name = "Apellidos", length = 50, nullable = false)
-	private String Apellidos;
-	@Column(name = "FechaNacimiento",nullable = false)
-	private LocalDate FechaNacimiento;
-	@Column(name = "Universidad", length = 50, nullable = false)
-	private String Universidad;
-	@Column(name = "Email", length = 50, nullable = false)
-	private String Email;
+	@Column(name = "nombres", length = 50, nullable = false)
+	private String nombres;
+	@Column(name = "apellidos", length = 50, nullable = false)
+	private String apellidos;
+	@Column(name = "fechaNacimiento",nullable = false)
+	private LocalDate fechaNacimiento;
+	@Column(name = "universidad", length = 50, nullable = false)
+	private String universidad;
+	@Column(name = "email", length = 50, nullable = false)
+	private String email;
 	//
 
 	public Usuarios(){}
@@ -46,11 +46,11 @@ public class Usuarios implements Serializable {
 		this.password = password;
 		this.enabled = enabled;
 		this.tipos_usuario = tipos_usuario;
-		Nombres = nombres;
-		Apellidos = apellidos;
-		FechaNacimiento = fechaNacimiento;
-		Universidad = universidad;
-		Email = email;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+		this.universidad = universidad;
+		this.email = email;
 	}
 
 	public Long getId() {
@@ -94,43 +94,42 @@ public class Usuarios implements Serializable {
 	}
 
 	public String getNombres() {
-		return Nombres;
+		return nombres;
 	}
 
 	public void setNombres(String nombres) {
-		Nombres = nombres;
+		this.nombres = nombres;
 	}
 
 	public String getApellidos() {
-		return Apellidos;
+		return apellidos;
 	}
 
 	public void setApellidos(String apellidos) {
-		Apellidos = apellidos;
+		this.apellidos = apellidos;
 	}
 
 	public LocalDate getFechaNacimiento() {
-		return FechaNacimiento;
+		return fechaNacimiento;
 	}
 
 	public void setFechaNacimiento(LocalDate fechaNacimiento) {
-		FechaNacimiento = fechaNacimiento;
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getUniversidad() {
-		return Universidad;
+		return universidad;
 	}
 
 	public void setUniversidad(String universidad) {
-		Universidad = universidad;
+		this.universidad = universidad;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
-
 }

@@ -21,5 +21,7 @@ public interface IActividadRepository extends JpaRepository<Actividad, Integer> 
    @Query(value = "select count(*) from actividad where fecha between :fechainicio and :fechafin",nativeQuery = true)
     public int countActividadByFecha(LocalDate fechainicio,LocalDate fechafin);
 
+   List<Actividad> findByHorarioUsuarioId(long id);
+
 
 }

@@ -1,7 +1,9 @@
 package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.beeorganizedproject.entities.TipoRecurso;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.ITiposUsuarioRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 
@@ -25,5 +27,10 @@ public class TiposUsuarioServiceImplement implements ITipoUsuarioService {
     @Override
     public void delete(int idTipoUsuario) {
         tR.deleteById(idTipoUsuario);
+    }
+
+    @Override
+    public TiposUsuario listarId(int id) {
+        return tR.findById(id).orElse(new TiposUsuario());
     }
 }

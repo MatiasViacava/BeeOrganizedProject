@@ -1,9 +1,9 @@
 package pe.edu.upc.aaw.beeorganizedproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TiposUsuarioDTO;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.TiposUsuario;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.ITipoUsuarioService;
 import java.util.List;
@@ -15,7 +15,6 @@ public class TiposUsuarioController {
     private ITipoUsuarioService tR;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m = new ModelMapper();
         TiposUsuario d = m.map(dto, TiposUsuario.class);
@@ -23,7 +22,6 @@ public class TiposUsuarioController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TiposUsuarioDTO> listar(){
         return tR.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
@@ -32,16 +30,20 @@ public class TiposUsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         tR.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void modificar(@RequestBody TiposUsuarioDTO dto){
         ModelMapper m=new ModelMapper();
         TiposUsuario d=m.map(dto, TiposUsuario.class);
         tR.insert(d);
+    }
+    @GetMapping("/{id}")
+    public TiposUsuarioDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        TiposUsuarioDTO dto=m.map(tR.listarId(id),TiposUsuarioDTO.class);
+        return dto;
     }
 }

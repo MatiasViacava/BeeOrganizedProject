@@ -28,4 +28,6 @@ public class ConfiguracionServiceImplement implements IConfiguracionService {
     public Configuracion listId(int idConfiguracion) {
         return iC.findById(idConfiguracion).orElse(new Configuracion());
     }
+    @Override
+    public List<Configuracion> findByUsuarioId(long id) {return iC.findByUsuarioId(id);}
 }

@@ -9,20 +9,20 @@ public class Pregunta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPregunta;
-    @Column(name = "Enunciado", length = 50,nullable = false)
-    private String Enunciado;
+    @Column(name = "enunciado", length = 50,nullable = false)
+    private String enunciado;
 
     @ManyToOne
     @JoinColumn(name = "idEncuesta")
-    private Encuesta Encuesta_id;
+    private Encuesta encuesta_id;
     public Pregunta(){
 
     }
 
-    public Pregunta(int idPregunta, String enunciado, Encuesta encuenta_id) {
+    public Pregunta(int idPregunta, String enunciado, Encuesta encuesta_id) {
         this.idPregunta = idPregunta;
-        Enunciado = enunciado;
-        Encuesta_id = encuenta_id;
+        this.enunciado = enunciado;
+        this.encuesta_id = encuesta_id;
     }
 
     public int getIdPregunta() {
@@ -34,19 +34,18 @@ public class Pregunta {
     }
 
     public String getEnunciado() {
-        return Enunciado;
+        return enunciado;
     }
 
     public void setEnunciado(String enunciado) {
-        Enunciado = enunciado;
+        this.enunciado = enunciado;
     }
 
-    public Encuesta getEncuenta_id() {
-        return Encuesta_id;
+    public Encuesta getEncuesta_id() {
+        return encuesta_id;
     }
 
-    public void setEncuenta_id(Encuesta encuenta_id) {
-        Encuesta_id = encuenta_id;
+    public void setEncuesta_id(Encuesta encuesta_id) {
+        this.encuesta_id = encuesta_id;
     }
-
 }

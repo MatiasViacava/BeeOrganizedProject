@@ -1,22 +1,22 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class TipoActividadDTO {
-    private int IDTipoActividad;
-    private String NombreTipoActividad;
+    private int iDTipoActividad;
+    private String nombreTipoActividad;
 
-    public int getIDTipoActividad() {
-        return IDTipoActividad;
+    public int getiDTipoActividad() {
+        return iDTipoActividad;
     }
 
-    public void setIDTipoActividad(int IDTipoActividad) {
-        this.IDTipoActividad = IDTipoActividad;
+    public void setiDTipoActividad(int iDTipoActividad) {
+        this.iDTipoActividad = iDTipoActividad;
     }
 
     public String getNombreTipoActividad() {
-        return NombreTipoActividad;
+        return nombreTipoActividad;
     }
 
     public void setNombreTipoActividad(String nombreTipoActividad) {
-        NombreTipoActividad = nombreTipoActividad;
+        this.nombreTipoActividad = nombreTipoActividad;
     }
 }

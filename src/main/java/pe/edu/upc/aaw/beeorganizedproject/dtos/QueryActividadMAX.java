@@ -3,15 +3,15 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 import java.time.LocalDate;
 
 public class QueryActividadMAX {
-    private LocalDate DateActivity;
+    private LocalDate dateActivity;
     private int maxActivity;
 
     public LocalDate getDateActivity() {
-        return DateActivity;
+        return dateActivity;
     }
 
     public void setDateActivity(LocalDate dateActivity) {
-        DateActivity = dateActivity;
+        this.dateActivity = dateActivity;
     }
 
     public int getMaxActivity() {

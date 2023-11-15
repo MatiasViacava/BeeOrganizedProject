@@ -8,22 +8,22 @@ public class Encuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEncuesta;
-    @Column(name = "valoracionFinal",nullable = false)
-    private  int valoracionFinal;
-    @Column(name = "Comentario",nullable = false,length = 120)
-    private String Comentario;
+    @Column(name = "nombreEncuesta",nullable = false)
+    private  String nombreEncuesta;
+    @Column(name = "comentario",nullable = false,length = 120)
+    private String comentario;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private Usuarios Usuario;
+    private Usuarios usuario;
     public Encuesta() {
     }
 
-    public Encuesta(int idEncuesta, int valoracionFinal, String comentario, Usuarios Usuario) {
+    public Encuesta(int idEncuesta, String nombreEncuesta, String comentario, Usuarios usuario) {
         this.idEncuesta = idEncuesta;
-        this.valoracionFinal = valoracionFinal;
-        Comentario = comentario;
-        this.Usuario = Usuario;
+        this.nombreEncuesta = nombreEncuesta;
+        this.comentario = comentario;
+        this.usuario = usuario;
     }
 
     public int getIdEncuesta() {
@@ -34,27 +34,27 @@ public class Encuesta {
         this.idEncuesta = idEncuesta;
     }
 
-    public int getValoracionFinal() {
-        return valoracionFinal;
+    public String getNombreEncuesta() {
+        return nombreEncuesta;
     }
 
-    public void setValoracionFinal(int valoracionFinal) {
-        this.valoracionFinal = valoracionFinal;
+    public void setNombreEncuesta(String nombreEncuesta) {
+        this.nombreEncuesta = nombreEncuesta;
     }
 
     public String getComentario() {
-        return Comentario;
+        return comentario;
     }
 
     public void setComentario(String comentario) {
-        Comentario = comentario;
+        this.comentario = comentario;
     }
 
     public Usuarios getUsuario() {
-        return Usuario;
+        return usuario;
     }
 
     public void setUsuario(Usuarios usuario) {
-        this.Usuario = usuario;
+        this.usuario = usuario;
     }
 }

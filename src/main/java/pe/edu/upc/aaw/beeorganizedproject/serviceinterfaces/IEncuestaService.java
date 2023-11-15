@@ -10,4 +10,6 @@ public interface IEncuestaService {
     List<Encuesta> list();
 
     public void delete(int idEncuesta);
+
+    public Encuesta listarId(int id);
 }

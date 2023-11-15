@@ -26,4 +26,12 @@ public class CursoServiceImplement implements ICursoService {
     public void delete(int idCurso) {
         dC.deleteById(idCurso);
     }
+
+    @Override
+    public Curso listarId(int id) {
+        return dC.findById(id).orElse(new Curso());
+    }
+
+    @Override
+    public List<Curso> buscarPorIdUsuario(long id) {return dC.buscarPorIdUsuario(id);}
 }

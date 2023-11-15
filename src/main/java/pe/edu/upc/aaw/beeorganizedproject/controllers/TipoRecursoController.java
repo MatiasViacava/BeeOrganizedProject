@@ -2,8 +2,8 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.CursoDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.QueryCantRecursosPorTipoDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoActividadDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.TipoRecursoDTO;
@@ -21,7 +21,6 @@ public class TipoRecursoController {
     private ITipoRecursoService trS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void registrar(@RequestBody TipoRecursoDTO dto){
         ModelMapper m= new ModelMapper();
         TipoRecurso r= m.map(dto,TipoRecurso.class);
@@ -29,7 +28,6 @@ public class TipoRecursoController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<TipoRecursoDTO> listar(){
         return trS.list().stream().map(x->{
             ModelMapper m=new ModelMapper();
@@ -38,19 +36,17 @@ public class TipoRecursoController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public void eliminar(@PathVariable("id")Integer id){
         trS.delete(id);
     }
     @PutMapping
-    public void modificar(@RequestBody TipoActividadDTO dto){
+    public void modificar(@RequestBody TipoRecursoDTO dto){
         ModelMapper m= new ModelMapper();
         TipoRecurso r= m.map(dto,TipoRecurso.class);
         trS.insert(r);
     }
 
     @GetMapping("/cantidad")
-    @PreAuthorize("hasAuthority('ADMINISTRADOR') or hasAuthority('PROGRAMADOR')")
     public List<QueryCantRecursosPorTipoDTO> CantidadRecursosAcademicosPorTipo() {
         List<String[]> lista = trS.quantityTypeAcademicResource();
         List<QueryCantRecursosPorTipoDTO> listaDTO = new ArrayList<>();
@@ -61,5 +57,11 @@ public class TipoRecursoController {
             listaDTO.add(dto);
         }
         return listaDTO;
+    }
+    @GetMapping("/{id}")
+    public TipoRecursoDTO listarId(@PathVariable("id") int  id) {
+        ModelMapper m=new ModelMapper();
+        TipoRecursoDTO dto=m.map(trS.listarId(id),TipoRecursoDTO.class);
+        return dto;
     }
 }

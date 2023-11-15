@@ -10,6 +10,5 @@ public interface IConfiguracionService {
     public List<Configuracion> list();
     public void delete(int idConfiguracion);
     public Configuracion listId(int idConfiguracion);
-
-    //APARTADO IDIOMA
+    public List<Configuracion> findByUsuarioId(long id);
 }

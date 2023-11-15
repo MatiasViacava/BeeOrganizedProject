@@ -1,22 +1,22 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class CantTipoActividadDTO {
-    private String Tipo_Actividad;
-    private int Cantidad;
+    private String tipo_Actividad;
+    private int cantidad;
 
     public String getTipo_Actividad() {
-        return Tipo_Actividad;
+        return tipo_Actividad;
     }
 
     public void setTipo_Actividad(String tipo_Actividad) {
-        Tipo_Actividad = tipo_Actividad;
+        this.tipo_Actividad = tipo_Actividad;
     }
 
     public int getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int cantidad) {
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 }

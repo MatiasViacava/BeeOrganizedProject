@@ -1,21 +1,22 @@
 package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class QueryCantRecursosPorTipoDTO {
-    private String NombreTipoRecurso;
-    private int CantRecursos;
+    private String nombreTipoRecurso;
+    private int cantRecursos;
+
     public String getNombreTipoRecurso() {
-        return NombreTipoRecurso;
+        return nombreTipoRecurso;
     }
 
     public void setNombreTipoRecurso(String nombreTipoRecurso) {
-        NombreTipoRecurso = nombreTipoRecurso;
+        this.nombreTipoRecurso = nombreTipoRecurso;
     }
 
     public int getCantRecursos() {
-        return CantRecursos;
+        return cantRecursos;
     }
 
     public void setCantRecursos(int cantRecursos) {
-        CantRecursos = cantRecursos;
+        this.cantRecursos = cantRecursos;
     }
 }

@@ -21,4 +21,9 @@ public class EncuestaServiceImplement implements IEncuestaService {
     public void delete(int idEncuesta) {
         eR.deleteById(idEncuesta);
     }
+
+    @Override
+    public Encuesta listarId(int id) {
+        return eR.findById(id).orElse(new Encuesta());
+    }
 }

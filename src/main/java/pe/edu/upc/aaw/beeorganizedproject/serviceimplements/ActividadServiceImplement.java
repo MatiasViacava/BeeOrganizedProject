@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.beeorganizedproject.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Actividad;
+import pe.edu.upc.aaw.beeorganizedproject.entities.Horario;
 import pe.edu.upc.aaw.beeorganizedproject.repositories.IActividadRepository;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IActividadService;
 
@@ -38,4 +39,12 @@ public class ActividadServiceImplement implements IActividadService {
     public int countActividadByFecha(LocalDate fechainicio, LocalDate fechafin){
        return aR.countActividadByFecha(fechainicio, fechafin);
     }
+
+    @Override
+    public Actividad listarId(int idActividad) {
+        return aR.findById(idActividad).orElse(new Actividad());
+    }
+
+    @Override
+    public List<Actividad> findByHorarioUsuarioId(long id) {return aR.findByHorarioUsuarioId(id);}
 }

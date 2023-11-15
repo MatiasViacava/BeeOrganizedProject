@@ -8,4 +8,7 @@ public interface IIdiomaService {
     public void insert(Idioma idioma);
     public List<Idioma> list();
     public void delete(int idIdioma);
+
+    public Idioma listarId(int id);
+
 }
