@@ -8,8 +8,8 @@ public class Encuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEncuesta;
-    @Column(name = "valoracionFinal",nullable = false)
-    private  int valoracionFinal;
+    @Column(name = "nombreEncuesta",nullable = false)
+    private  String nombreEncuesta;
     @Column(name = "comentario",nullable = false,length = 120)
     private String comentario;
 
@@ -17,6 +17,13 @@ public class Encuesta {
     @JoinColumn(name = "usuario_id")
     private Usuarios usuario;
     public Encuesta() {
+    }
+
+    public Encuesta(int idEncuesta, String nombreEncuesta, String comentario, Usuarios usuario) {
+        this.idEncuesta = idEncuesta;
+        this.nombreEncuesta = nombreEncuesta;
+        this.comentario = comentario;
+        this.usuario = usuario;
     }
 
     public int getIdEncuesta() {
@@ -27,12 +34,12 @@ public class Encuesta {
         this.idEncuesta = idEncuesta;
     }
 
-    public int getValoracionFinal() {
-        return valoracionFinal;
+    public String getNombreEncuesta() {
+        return nombreEncuesta;
     }
 
-    public void setValoracionFinal(int valoracionFinal) {
-        this.valoracionFinal = valoracionFinal;
+    public void setNombreEncuesta(String nombreEncuesta) {
+        this.nombreEncuesta = nombreEncuesta;
     }
 
     public String getComentario() {

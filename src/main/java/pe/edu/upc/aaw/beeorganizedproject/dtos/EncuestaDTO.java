@@ -4,7 +4,7 @@ package pe.edu.upc.aaw.beeorganizedproject.dtos;
 
 public class EncuestaDTO {
     private int idEncuesta;
-    private  int valoracionFinal;
+    private  String nombreEncuesta;
     private String comentario;
     private UsuarioDTO usuario;
 
@@ -16,12 +16,12 @@ public class EncuestaDTO {
         this.idEncuesta = idEncuesta;
     }
 
-    public int getValoracionFinal() {
-        return valoracionFinal;
+    public String getNombreEncuesta() {
+        return nombreEncuesta;
     }
 
-    public void setValoracionFinal(int valoracionFinal) {
-        this.valoracionFinal = valoracionFinal;
+    public void setNombreEncuesta(String nombreEncuesta) {
+        this.nombreEncuesta = nombreEncuesta;
     }
 
     public String getComentario() {
