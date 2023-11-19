@@ -57,7 +57,7 @@ public class WebSecurityConfig {
         httpSecurity
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate").permitAll() //.hasAuthority("ADMIN")
+                .antMatchers("/authenticate","/usuarios","/usuarios/ultimousuariocreado","/encuestas","/encuestas/ultimaencuestacreada","/tiposusuarios","/configuraciones","/preguntas").permitAll() //.hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)

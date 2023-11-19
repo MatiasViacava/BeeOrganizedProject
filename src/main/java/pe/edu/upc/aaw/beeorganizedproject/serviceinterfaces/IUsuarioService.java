@@ -15,6 +15,8 @@ public interface IUsuarioService {
 
     public int ultimoUsuarioCreado();
 
+    public List<Usuarios> findById(long id);
+
     public void actualizarUsuario(long id, String p1, String p2, Boolean p3, String p4, String p5, LocalDate p6, String p7, String p8);
 
 }

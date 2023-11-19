@@ -26,4 +26,6 @@ public class EncuestaServiceImplement implements IEncuestaService {
     public Encuesta listarId(int id) {
         return eR.findById(id).orElse(new Encuesta());
     }
+
+    public int ultimaEncuestacreada() {return eR.ultimaEncuestacreada();}
 }

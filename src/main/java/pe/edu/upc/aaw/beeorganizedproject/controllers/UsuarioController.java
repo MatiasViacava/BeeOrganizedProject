@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.beeorganizedproject.controllers;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.beeorganizedproject.dtos.HorarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.beeorganizedproject.entities.Usuarios;
 import pe.edu.upc.aaw.beeorganizedproject.serviceinterfaces.IUsuarioService;
@@ -73,6 +74,14 @@ public class UsuarioController {
     @PathVariable("p8") String p8)
     {
         uR.actualizarUsuario(id2,p1,p2,Boolean.parseBoolean(p3),p4,p5,LocalDate.parse(p6),p7,p8);
+    }
+
+    @GetMapping("/listar/{id2}")
+    public List<UsuarioDTO> listarporid(@PathVariable("id2") long id){
+        return uR.findById(id).stream().map(x->{
+            ModelMapper m=new ModelMapper();
+            return m.map(x, UsuarioDTO.class);
+        }).collect(Collectors.toList());
     }
 
 }

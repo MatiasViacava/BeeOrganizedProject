@@ -38,6 +38,8 @@ public class UsuarioServiceImplement implements IUsuarioService {
         return iU.findByNombres(nombres);
     }
 
+    public List<Usuarios> findById(long id) {return iU.findById(id);}
+
     @Override
     public int ultimoUsuarioCreado() {return iU.ultimoUsuarioCreado();}
 
