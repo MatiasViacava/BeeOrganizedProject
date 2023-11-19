@@ -30,6 +30,8 @@ public interface IUsuarioRepository extends JpaRepository<Usuarios, Long> {
 	//BUSCAR POR NOMBRE - CHISDE
 	List<Usuarios> findByNombres(String nombres);
 
+	List<Usuarios> findById(long id);
+
 	@Query(value = "select id from usuarios order by id desc limit 1", nativeQuery = true)
 	public int ultimoUsuarioCreado();
 

@@ -12,4 +12,6 @@ public interface IEncuestaService {
     public void delete(int idEncuesta);
 
     public Encuesta listarId(int id);
+
+    public int ultimaEncuestacreada();
 }

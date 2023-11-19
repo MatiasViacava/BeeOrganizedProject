@@ -20,7 +20,7 @@ public interface ITipoActividadRepository extends JpaRepository<TipoActividad,In
             " join Actividad a on ta.idtipo_actividad=a.idtipoactividad\n" +
             " join Horario h on a.id_horario=h.id_horario\n" +
             " join Usuarios u on u.id=h.usuario_id\n" +
-            " where ta.nombre_tipo_actividad='Extracurricular' group by NombreCompleto", nativeQuery = true)
+            " where ta.nombre_tipo_actividad='Extraacadémico' group by NombreCompleto", nativeQuery = true)
     public List<String[]> quantityTypeActivitieExtracurricular();
 
 }

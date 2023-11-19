@@ -44,4 +44,10 @@ public class EncuestaController {
         EncuestaDTO dto=m.map(eS.listarId(id),EncuestaDTO.class);
         return dto;
     }
+
+    @GetMapping("/ultimaencuestacreada")
+    public int ultimaEncuestaCreada()
+    {
+        return eS.ultimaEncuestacreada();
+    }
 }
